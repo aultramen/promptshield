@@ -2,7 +2,7 @@
 
 ## Summary
 
-Derived pointer menuju packet FSD-PROMPTSHIELD-V1#GOAL-002. Status blocked; belum ada execution authorization.
+Derived pointer menuju packet FSD-PROMPTSHIELD-V1#GOAL-002. Execution authorized oleh user `$sc-work .scratch\promptshield-v1\issues\02-native-subscription-slice.md`, 2026-10-04. Status tetap blocked: authorization tersedia, readiness prerequisites belum terpenuhi.
 
 Artifact contract version: `2.0.0`
 Status: blocked
@@ -19,5 +19,10 @@ Contract gate: READY_FOR_SLICE
 
 ## Stop Conditions
 
-FSD-PROMPTSHIELD-V1#OPEN-001, FSD-PROMPTSHIELD-V1#OPEN-002, FSD-PROMPTSHIELD-V1#OPEN-003, FSD-PROMPTSHIELD-V1#OPEN-006, FSD-PROMPTSHIELD-V1#OPEN-007, FSD-PROMPTSHIELD-V1#OPEN-009. Scope, done criteria, verification commands dan branch suggestion hanya dalam parent goal packet; jangan menebak kontrak atau mempromosikan status dari approval upstream.
+FSD-PROMPTSHIELD-V1#OPEN-001, FSD-PROMPTSHIELD-V1#OPEN-002, FSD-PROMPTSHIELD-V1#OPEN-003, FSD-PROMPTSHIELD-V1#OPEN-006, FSD-PROMPTSHIELD-V1#OPEN-007. FSD-PROMPTSHIELD-V1#OPEN-009 resolved untuk GOAL-002 oleh separate execution request di atas. Scope, done criteria, verification commands dan branch suggestion hanya dalam parent goal packet; jangan menebak kontrak atau mempromosikan status dari approval upstream.
 
+## Execution preflight — 2026-10-04
+
+GOAL-001 dependency verified. Pinned contract 1.0.0 dan role FIRST_VERTICAL_SLICE cocok dengan parent packet; `Contract gate: READY_FOR_SLICE` menyatakan required gate, bukan bukti readiness sudah pass. Readiness command dalam [FSD Section 17](../../../docs/fsd/fsd-promptshield-v1.md) exit 1, verdict BLOCKED: `baseline` (DRAFT) dan `open-blockers` (OPEN-001/002/003/006/007). Local revisions, derived assets, verification references, runnable evidence dan dependency checks pass.
+
+Next action: human `/sc-ui` baseline/native-placement review atas [GOAL-001 evidence](../../prototypes/promptshield-ui-v1/VERIFICATION.md), owning `/sc-prd` reconciliation, lalu subscription/protocol/OS/runtime qualification dan `/sc-plan` readiness reconciliation. Authorization GOAL-002 tetap berlaku untuk scope yang sama; tidak perlu meminta ulang hanya karena readiness baru diselesaikan. TEST-003/006/008 belum dijalankan; tidak ada product implementation atau live qualification pada preflight ini.
