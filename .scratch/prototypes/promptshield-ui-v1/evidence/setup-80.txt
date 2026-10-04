@@ -1,0 +1,33 @@
+PromptShield | SIMULASI OFFLINE | MOCK | pilih mode awal
+Belum ada pilihan. Tidak ada request yang dikirim. Cancel: q atau Ctrl+C.
+1. detect-first: Detect First: tahan finding hingga pilihan sah.
+2. detect-only: Detect Only: konten asli dapat dikirim, tanpa masking.
+3. always-mask: Always Masking: direkomendasikan untuk proteksi.
+4. off: Protection: OFF. Konten asli dapat dikirim tanpa pemeriksaan.
+Pilih nomor lalu Enter; kosong tidak memilih default. q Cancel setup.
+>
+Pilihan tidak valid. Pilih mode secara eksplisit atau Cancel.
+Pilih nomor lalu Enter; kosong tidak memilih default. q Cancel setup.
+> 9
+Pilihan tidak valid. Pilih mode secara eksplisit atau Cancel.
+Pilih nomor lalu Enter; kosong tidak memilih default. q Cancel setup.
+> 3
+Always Masking: direkomendasikan untuk proteksi.
+Policy version: 2
+PromptShield | SIMULASI OFFLINE | MOCK | integrasi belum diverifikasi
+Pilih mode awal; Always Masking direkomendasikan.
+Sesi lokal: 22222222222222222222222222222222
+Status: NOT_READY | mode: always-mask
+Always Masking: direkomendasikan untuk proteksi.
+Mode request aktif: None | mode berikutnya: always-mask
+Map: empty | policy version: 2
+Required engines: regex belum siap, secret-scanner belum siap, dictionary belum
+siap, laya belum siap
+NOT_READY: protected send diblokir. Periksa engine dan konfigurasi lokal.
+EMPTY: tidak ada tindakan tertunda. Pilih sesi atau mulai request baru.
+m Mode | v Verbose metadata | r Refresh | c Cancel request aktif | s Stop | q
+Keluar
+Ketik pilihan lalu Enter. Enter kosong tidak menyetujui tindakan. Ctrl+C
+membatalkan pilihan aktif.
+> q
+Reviewer ditutup. Tindakan pending mengikuti deadline.

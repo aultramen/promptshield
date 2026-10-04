@@ -1,0 +1,40 @@
+{
+  "environment": "MOCK",
+  "contract_version": "1.0.0",
+  "fixture_revision": "1.0.0",
+  "checks": 46,
+  "failures": [],
+  "widths": [
+    80,
+    120
+  ],
+  "ui_states": [
+    "UI-STATE-001",
+    "UI-STATE-002",
+    "UI-STATE-003",
+    "UI-STATE-004",
+    "UI-STATE-005",
+    "UI-STATE-006",
+    "UI-STATE-007",
+    "UI-STATE-008",
+    "UI-STATE-009",
+    "UI-STATE-010",
+    "UI-STATE-011",
+    "UI-STATE-012"
+  ],
+  "verified_at": "2026-10-04T11:18:29.492633+00:00",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "reviewer": "Codex agent (sequential local review)",
+  "command": "rtk python .scratch/prototypes/promptshield-ui-v1/review.py --scenario-suite --widths 80,120",
+  "configuration": "stdlib, synthetic in-process mock, no production transport",
+  "source_digests": {
+    ".scratch/prototypes/promptshield-ui-v1/review.py": "579b7035661feb2124390aba9b55b790381d328b139f8917249abe00de6d79a7",
+    ".scratch/prototypes/promptshield-ui-v1/control_dto.py": "f001da4afb94ea90c31f812e1eaf8ef6d8a7e2daf22ade3aab38dcd87c2a8786",
+    "tests/contracts/mock_control.py": "81e1c01c37938d85d4b7d040751050b3e1582c997da1820495b376f93ffc9c3e",
+    "tests/fixtures/synthetic/contracts-v1.json": "57d53467b4ec06e59ea54eedb1e24177240640a50c74d408ade7b9e73b075c0e",
+    "tests/contracts/test_local_contract.py": "f0232c683fe4356b0d84269b516914ef45d0d8af10584500930e18b1fd66ccda",
+    "tests/contracts/build_fixtures.py": "8e2134c5e44bf3b97ed81897da84792b28acd579334352125c374784e0ad5548",
+    "contracts/promptshield/local-v1.json": "6488cb724c62b633dfb4c5f8edd30bafccbe50cfe697bf6f064b9fee92c0f7f8"
+  }
+}

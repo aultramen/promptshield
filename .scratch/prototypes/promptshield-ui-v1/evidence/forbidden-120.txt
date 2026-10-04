@@ -1,0 +1,8 @@
+FORBIDDEN: Akses ditolak. Pilih sesi yang Anda miliki atau hubungi pengelola policy.
+PromptShield | SIMULASI OFFLINE | MOCK | integrasi belum diverifikasi
+Akses sesi ditolak. Gunakan reviewer milik owner yang benar.
+EMPTY: tidak ada tindakan tertunda. Pilih sesi atau mulai request baru.
+m Mode | v Verbose metadata | r Refresh | c Cancel request aktif | s Stop | q Keluar
+Ketik pilihan lalu Enter. Enter kosong tidak menyetujui tindakan. Ctrl+C membatalkan pilihan aktif.
+> q
+Reviewer ditutup. Tindakan pending mengikuti deadline.

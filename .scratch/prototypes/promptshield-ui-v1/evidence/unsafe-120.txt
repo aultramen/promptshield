@@ -1,0 +1,13 @@
+PromptShield | SIMULASI OFFLINE | MOCK | integrasi belum diverifikasi
+Protection: OFF. Request baru tidak diperiksa atau dimasking.
+Sesi lokal: 22222222222222222222222222222222
+Status: READY | mode: off
+Protection: OFF. Konten asli dapat dikirim tanpa pemeriksaan.
+Mode request aktif: None | mode berikutnya: off
+Map: empty | policy version: 1
+Required engines: regex siap, secret-scanner siap, dictionary siap, laya siap
+EMPTY: tidak ada tindakan tertunda. Pilih sesi atau mulai request baru.
+m Mode | v Verbose metadata | r Refresh | c Cancel request aktif | s Stop | q Keluar
+Ketik pilihan lalu Enter. Enter kosong tidak menyetujui tindakan. Ctrl+C membatalkan pilihan aktif.
+> q
+Reviewer ditutup. Tindakan pending mengikuti deadline.

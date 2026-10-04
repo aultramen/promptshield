@@ -1,0 +1,1710 @@
+{
+  "revision": "1.0.0",
+  "contract_version": "1.0.0",
+  "environment": "MOCK",
+  "authority": "FSD-PROMPTSHIELD-V1#TEST-001",
+  "scenarios": [
+    {
+      "name": "setup",
+      "fixture_id": "FIXTURE-001",
+      "states": [
+        "UI-STATE-001",
+        "UI-STATE-004",
+        "UI-STATE-005",
+        "UI-STATE-009"
+      ],
+      "label": "Pilih mode awal; Always Masking direkomendasikan.",
+      "options": {
+        "state": "NOT_READY",
+        "pending": false,
+        "engines_ready": false
+      },
+      "keys": [
+        "",
+        "9",
+        "3",
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "NOT_READY",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": false,
+                "secret-scanner": false,
+                "dictionary": false,
+                "laya": false
+              },
+              "pending_count": 0,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "fixture_id": "FIXTURE-002",
+      "states": [
+        "UI-STATE-002",
+        "UI-STATE-006"
+      ],
+      "label": "Tidak ada tindakan tertunda. Pilih sesi lokal yang tepat.",
+      "options": {
+        "state": "EMPTY",
+        "pending": false
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "EMPTY",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 0,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pending",
+      "fixture_id": "FIXTURE-003",
+      "states": [
+        "UI-STATE-007",
+        "UI-STATE-010"
+      ],
+      "label": "Tinjau kategori dan jumlah sebelum memilih Mask, Edit, atau Cancel.",
+      "options": {
+        "state": "WAITING_USER"
+      },
+      "keys": [
+        "",
+        "9",
+        "1",
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "WAITING_USER",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 1,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": [
+                {
+                  "pending_id": "33333333333333333333333333333333",
+                  "revision": 1,
+                  "action_kind": "REQUEST_REVIEW",
+                  "request_id": "44444444444444444444444444444444",
+                  "mode": "detect-first",
+                  "policy_version": 1,
+                  "time_remaining": 120,
+                  "categories": {
+                    "SECRETS": 1,
+                    "PII": 2
+                  },
+                  "permitted_decisions": [
+                    "mask",
+                    "edit",
+                    "cancel"
+                  ],
+                  "purpose": "CONNECTIVITY_CHECK"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "success",
+      "fixture_id": "FIXTURE-004",
+      "states": [
+        "UI-STATE-003",
+        "UI-STATE-008"
+      ],
+      "label": "Simulasi selesai. Submitted, streaming, dan completed adalah status berbeda.",
+      "options": {
+        "state": "COMPLETED",
+        "pending": false
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "COMPLETED",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 0,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "held",
+      "fixture_id": "FIXTURE-005",
+      "states": [
+        "UI-STATE-005",
+        "UI-STATE-010"
+      ],
+      "label": "Tool ditahan. Manual dan variable mengakhiri call lama; mulai task baru.",
+      "options": {
+        "state": "TOOL_HELD",
+        "action_kind": "TOOL_HELD"
+      },
+      "keys": [
+        "2",
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "TOOL_HELD",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 1,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": [
+                {
+                  "pending_id": "33333333333333333333333333333333",
+                  "revision": 1,
+                  "action_kind": "TOOL_HELD",
+                  "request_id": "44444444444444444444444444444444",
+                  "mode": "detect-first",
+                  "policy_version": 1,
+                  "time_remaining": 120,
+                  "categories": {
+                    "SECRETS": 1,
+                    "PII": 2
+                  },
+                  "permitted_decisions": [
+                    "manual",
+                    "variable",
+                    "cancel"
+                  ],
+                  "purpose": "CONNECTIVITY_CHECK"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "stale",
+      "fixture_id": "FIXTURE-006",
+      "states": [
+        "UI-STATE-006",
+        "UI-STATE-007",
+        "UI-STATE-011"
+      ],
+      "label": "Perubahan mode membuat pilihan lama kedaluwarsa; stream aktif memakai mode awal.",
+      "options": {
+        "state": "STREAMING"
+      },
+      "keys": [
+        "m",
+        "4",
+        "1",
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "STREAMING",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": "always-mask",
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 1,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "active"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": [
+                {
+                  "pending_id": "33333333333333333333333333333333",
+                  "revision": 1,
+                  "action_kind": "REQUEST_REVIEW",
+                  "request_id": "44444444444444444444444444444444",
+                  "mode": "detect-first",
+                  "policy_version": 1,
+                  "time_remaining": 120,
+                  "categories": {
+                    "SECRETS": 1,
+                    "PII": 2
+                  },
+                  "permitted_decisions": [
+                    "mask",
+                    "edit",
+                    "cancel"
+                  ],
+                  "purpose": "CONNECTIVITY_CHECK"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "error",
+      "fixture_id": "FIXTURE-007",
+      "states": [
+        "UI-STATE-001",
+        "UI-STATE-004",
+        "UI-STATE-005",
+        "UI-STATE-008",
+        "UI-STATE-009"
+      ],
+      "label": "Engine wajib belum siap. Periksa instalasi lokal sebelum protected send.",
+      "options": {
+        "state": "NOT_READY",
+        "engines_ready": false,
+        "pending": false
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "NOT_READY",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": false,
+                "secret-scanner": false,
+                "dictionary": false,
+                "laya": false
+              },
+              "pending_count": 0,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "verbose",
+      "fixture_id": "FIXTURE-008",
+      "states": [
+        "UI-STATE-003",
+        "UI-STATE-004",
+        "UI-STATE-006"
+      ],
+      "label": "Verbose hanya menambah metadata kategori dan jumlah.",
+      "options": {
+        "state": "READY",
+        "pending": false
+      },
+      "keys": [
+        "v",
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "READY",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 0,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "cleanup",
+      "fixture_id": "FIXTURE-009",
+      "states": [
+        "UI-STATE-005",
+        "UI-STATE-007",
+        "UI-STATE-008",
+        "UI-STATE-010"
+      ],
+      "label": "Cancel dan stop mengakhiri proses lokal; login dan file tidak dihapus.",
+      "options": {
+        "state": "STREAMING"
+      },
+      "keys": [
+        "c",
+        "s"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "STREAMING",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": "always-mask",
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 1,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "active"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": [
+                {
+                  "pending_id": "33333333333333333333333333333333",
+                  "revision": 1,
+                  "action_kind": "REQUEST_REVIEW",
+                  "request_id": "44444444444444444444444444444444",
+                  "mode": "detect-first",
+                  "policy_version": 1,
+                  "time_remaining": 120,
+                  "categories": {
+                    "SECRETS": 1,
+                    "PII": 2
+                  },
+                  "permitted_decisions": [
+                    "mask",
+                    "edit",
+                    "cancel"
+                  ],
+                  "purpose": "CONNECTIVITY_CHECK"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "offline",
+      "fixture_id": "FIXTURE-010",
+      "states": [
+        "UI-STATE-001",
+        "UI-STATE-003",
+        "UI-STATE-005",
+        "UI-STATE-009"
+      ],
+      "label": "Offline self-test menguji mock lokal. Hasilnya bukan verifikasi integrasi.",
+      "options": {
+        "state": "NOT_READY",
+        "engines_ready": false,
+        "pending": false
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "NOT_READY",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": false,
+                "secret-scanner": false,
+                "dictionary": false,
+                "laya": false
+              },
+              "pending_count": 0,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "keyboard",
+      "fixture_id": "FIXTURE-011",
+      "states": [
+        "UI-STATE-012"
+      ],
+      "label": "Kategori infrastruktur dan identitas sintetis dengan label panjang tetap terbaca melalui keyboard.",
+      "options": {
+        "state": "WAITING_USER"
+      },
+      "keys": [
+        "x",
+        "3",
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "WAITING_USER",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 1,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": [
+                {
+                  "pending_id": "33333333333333333333333333333333",
+                  "revision": 1,
+                  "action_kind": "REQUEST_REVIEW",
+                  "request_id": "44444444444444444444444444444444",
+                  "mode": "detect-first",
+                  "policy_version": 1,
+                  "time_remaining": 120,
+                  "categories": {
+                    "SECRETS": 1,
+                    "PII": 2
+                  },
+                  "permitted_decisions": [
+                    "mask",
+                    "edit",
+                    "cancel"
+                  ],
+                  "purpose": "CONNECTIVITY_CHECK"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "forbidden",
+      "fixture_id": "FIXTURE-002",
+      "states": [
+        "UI-STATE-006"
+      ],
+      "label": "Akses sesi ditolak. Gunakan reviewer milik owner yang benar.",
+      "options": {
+        "owner": false
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": false,
+            "error": {
+              "code": "FORBIDDEN",
+              "retryable": false
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": false,
+            "error": {
+              "code": "FORBIDDEN",
+              "retryable": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "degraded",
+      "fixture_id": "FIXTURE-007",
+      "states": [
+        "UI-STATE-008"
+      ],
+      "label": "Detect Only degraded: konten asli dapat dikirim. Perbaiki engine lokal.",
+      "options": {
+        "state": "DEGRADED",
+        "mode": "detect-only",
+        "engines_ready": false,
+        "pending": false
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "DEGRADED",
+              "effective_mode": "detect-only",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-only",
+              "required_engines": {
+                "regex": false,
+                "secret-scanner": false,
+                "dictionary": false,
+                "laya": false
+              },
+              "pending_count": 0,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "unsafe",
+      "fixture_id": "FIXTURE-006",
+      "states": [
+        "UI-STATE-011"
+      ],
+      "label": "Protection: OFF. Request baru tidak diperiksa atau dimasking.",
+      "options": {
+        "state": "READY",
+        "mode": "off",
+        "pending": false
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "READY",
+              "effective_mode": "off",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "off",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 0,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "expired",
+      "fixture_id": "FIXTURE-009",
+      "states": [
+        "UI-STATE-007",
+        "UI-STATE-010"
+      ],
+      "label": "Deadline habis. Pilihan lama ditolak; buat request baru.",
+      "options": {
+        "state": "WAITING_USER"
+      },
+      "keys": [
+        "1",
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "CANCELLED",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 0,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "revoked"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "manual",
+      "fixture_id": "FIXTURE-005",
+      "states": [
+        "UI-STATE-003",
+        "UI-STATE-010"
+      ],
+      "label": "Manual handoff mengakhiri call lama; bukan tool success.",
+      "options": {
+        "state": "TOOL_HELD",
+        "action_kind": "TOOL_HELD"
+      },
+      "keys": [
+        "1",
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "TOOL_HELD",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 1,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": [
+                {
+                  "pending_id": "33333333333333333333333333333333",
+                  "revision": 1,
+                  "action_kind": "TOOL_HELD",
+                  "request_id": "44444444444444444444444444444444",
+                  "mode": "detect-first",
+                  "policy_version": 1,
+                  "time_remaining": 120,
+                  "categories": {
+                    "SECRETS": 1,
+                    "PII": 2
+                  },
+                  "permitted_decisions": [
+                    "manual",
+                    "variable",
+                    "cancel"
+                  ],
+                  "purpose": "CONNECTIVITY_CHECK"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "fixture_id": "FIXTURE-003",
+      "states": [
+        "UI-STATE-003",
+        "UI-STATE-010"
+      ],
+      "label": "Edit mengakhiri request lama; input baru ditinjau kembali.",
+      "options": {
+        "state": "WAITING_USER"
+      },
+      "keys": [
+        "2",
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "WAITING_USER",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 1,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": [
+                {
+                  "pending_id": "33333333333333333333333333333333",
+                  "revision": 1,
+                  "action_kind": "REQUEST_REVIEW",
+                  "request_id": "44444444444444444444444444444444",
+                  "mode": "detect-first",
+                  "policy_version": 1,
+                  "time_remaining": 120,
+                  "categories": {
+                    "SECRETS": 1,
+                    "PII": 2
+                  },
+                  "permitted_decisions": [
+                    "mask",
+                    "edit",
+                    "cancel"
+                  ],
+                  "purpose": "CONNECTIVITY_CHECK"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ctrl-c",
+      "fixture_id": "FIXTURE-011",
+      "states": [
+        "UI-STATE-010",
+        "UI-STATE-012"
+      ],
+      "label": "Ctrl+C membatalkan pilihan aktif dan menutup reviewer.",
+      "options": {
+        "state": "WAITING_USER"
+      },
+      "keys": [
+        "CTRL_C"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "WAITING_USER",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 1,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": [
+                {
+                  "pending_id": "33333333333333333333333333333333",
+                  "revision": 1,
+                  "action_kind": "REQUEST_REVIEW",
+                  "request_id": "44444444444444444444444444444444",
+                  "mode": "detect-first",
+                  "policy_version": 1,
+                  "time_remaining": 120,
+                  "categories": {
+                    "SECRETS": 1,
+                    "PII": 2
+                  },
+                  "permitted_decisions": [
+                    "mask",
+                    "edit",
+                    "cancel"
+                  ],
+                  "purpose": "CONNECTIVITY_CHECK"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "disconnect",
+      "fixture_id": "FIXTURE-009",
+      "states": [
+        "UI-STATE-007",
+        "UI-STATE-010"
+      ],
+      "label": "Reviewer terputus tidak menyetujui tindakan pending.",
+      "options": {
+        "state": "WAITING_USER"
+      },
+      "keys": [
+        "DISCONNECT"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": true,
+            "result": {
+              "kind": "STATUS",
+              "instance_id": "22222222222222222222222222222222",
+              "state": "WAITING_USER",
+              "effective_mode": "detect-first",
+              "policy_version": 1,
+              "active_request_mode": null,
+              "next_mode": "detect-first",
+              "required_engines": {
+                "regex": true,
+                "secret-scanner": true,
+                "dictionary": true,
+                "laya": true
+              },
+              "pending_count": 1,
+              "coverage_profile_id": "55555555555555555555555555555555",
+              "integration_verified": false,
+              "token_store_state": "empty"
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": true,
+            "result": {
+              "kind": "PENDING_LIST",
+              "pending": [
+                {
+                  "pending_id": "33333333333333333333333333333333",
+                  "revision": 1,
+                  "action_kind": "REQUEST_REVIEW",
+                  "request_id": "44444444444444444444444444444444",
+                  "mode": "detect-first",
+                  "policy_version": 1,
+                  "time_remaining": 120,
+                  "categories": {
+                    "SECRETS": 1,
+                    "PII": 2
+                  },
+                  "permitted_decisions": [
+                    "mask",
+                    "edit",
+                    "cancel"
+                  ],
+                  "purpose": "CONNECTIVITY_CHECK"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "auth",
+      "fixture_id": "FIXTURE-007",
+      "states": [
+        "UI-STATE-005"
+      ],
+      "label": "Simulasi login native diperlukan.",
+      "options": {
+        "pending": false,
+        "forced_error": "AUTH_REQUIRED"
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": false,
+            "error": {
+              "code": "AUTH_REQUIRED",
+              "retryable": false
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": false,
+            "error": {
+              "code": "AUTH_REQUIRED",
+              "retryable": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "upstream",
+      "fixture_id": "FIXTURE-007",
+      "states": [
+        "UI-STATE-005",
+        "UI-STATE-009"
+      ],
+      "label": "Simulasi upstream tidak tersedia.",
+      "options": {
+        "pending": false,
+        "forced_error": "UPSTREAM_UNAVAILABLE"
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": false,
+            "error": {
+              "code": "UPSTREAM_UNAVAILABLE",
+              "retryable": false
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": false,
+            "error": {
+              "code": "UPSTREAM_UNAVAILABLE",
+              "retryable": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "tool-limit",
+      "fixture_id": "FIXTURE-005",
+      "states": [
+        "UI-STATE-005"
+      ],
+      "label": "Simulasi batas tool gate; tidak ada executable output.",
+      "options": {
+        "pending": false,
+        "forced_error": "TOOL_GATE_LIMIT"
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": false,
+            "error": {
+              "code": "TOOL_GATE_LIMIT",
+              "retryable": false
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": false,
+            "error": {
+              "code": "TOOL_GATE_LIMIT",
+              "retryable": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "stream-invalid",
+      "fixture_id": "FIXTURE-007",
+      "states": [
+        "UI-STATE-005",
+        "UI-STATE-008"
+      ],
+      "label": "Simulasi stream belum lengkap.",
+      "options": {
+        "pending": false,
+        "forced_error": "STREAM_INVALID"
+      },
+      "keys": [
+        "q"
+      ],
+      "exchanges": [
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "status"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000001",
+            "ok": false,
+            "error": {
+              "code": "STREAM_INVALID",
+              "retryable": false
+            }
+          }
+        },
+        {
+          "request": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "instance_id": "22222222222222222222222222222222",
+            "op": "list_pending"
+          },
+          "response": {
+            "schema_version": 1,
+            "id": "00000000000000000000000000000002",
+            "ok": false,
+            "error": {
+              "code": "STREAM_INVALID",
+              "retryable": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "abuse_requests": [
+    {
+      "name": "unknown_value_field",
+      "wire": "{\"schema_version\": 1, \"id\": \"11111111111111111111111111111111\", \"instance_id\": \"22222222222222222222222222222222\", \"op\": \"status\", \"value\": \"SYNTHETIC_PRIVATE_CANARY\"}",
+      "error": "POLICY_INVALID"
+    },
+    {
+      "name": "duplicate_key",
+      "wire": "{\"schema_version\": 1, \"schema_version\": 1, \"id\": \"11111111111111111111111111111111\", \"instance_id\": \"22222222222222222222222222222222\", \"op\": \"status\"}",
+      "error": "POLICY_INVALID"
+    },
+    {
+      "name": "nonfinite",
+      "wire": "{\"schema_version\": NaN, \"id\": \"11111111111111111111111111111111\", \"instance_id\": \"22222222222222222222222222222222\", \"op\": \"status\"}",
+      "error": "POLICY_INVALID"
+    },
+    {
+      "name": "bool_not_integer",
+      "wire": "{\"schema_version\": true, \"id\": \"11111111111111111111111111111111\", \"instance_id\": \"22222222222222222222222222222222\", \"op\": \"status\"}",
+      "error": "POLICY_INVALID"
+    },
+    {
+      "name": "invalid_identifier",
+      "wire": "{\"schema_version\": 1, \"id\": \"11111111111111111111111111111111\", \"instance_id\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", \"op\": \"status\"}",
+      "error": "POLICY_INVALID"
+    },
+    {
+      "name": "missing_field",
+      "wire": "{\"schema_version\": 1, \"instance_id\": \"22222222222222222222222222222222\", \"op\": \"status\"}",
+      "error": "POLICY_INVALID"
+    },
+    {
+      "name": "unknown_operation",
+      "wire": "{\"schema_version\": 1, \"id\": \"11111111111111111111111111111111\", \"instance_id\": \"22222222222222222222222222222222\", \"op\": \"submit_inference\"}",
+      "error": "POLICY_INVALID"
+    }
+  ]
+}

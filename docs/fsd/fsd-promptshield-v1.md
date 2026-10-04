@@ -4,7 +4,7 @@
 
 FSD ini menerjemahkan approved PRD menjadi kontrak teknis local privacy gateway untuk native Codex CLI dengan subscription ChatGPT. Nilai sensitif ditokenisasi sebelum inference, lalu dipulihkan hanya pada teks jawaban. Executable output yang membutuhkan original value ditahan; manual/variable/cancel tidak menjalankan call lama.
 
-FSD dan issue pointers telah **APPROVED** oleh user melalui `Approved FSD, $sc-go commit and push`, 2026-10-04. Arah UI juga telah disetujui, tetapi runnable evidence, upstream qualification dan dependency/model qualification belum tersedia. GOAL-001 merupakan bounded offline contract enabler; semua integration/delivery goals tetap blocked. Otorisasi saat ini mencakup commit/push ke repository yang ditentukan, bukan execution GOAL. Enabler dapat dikerjakan setelah execution authorization terpisah, tanpa menebak upstream atau memakai data nyata.
+FSD dan issue pointers telah **APPROVED** oleh user melalui `Approved FSD, $sc-go commit and push`, 2026-10-04. Separate user `$sc-work` mengotorisasi GOAL-001 pada tanggal yang sama. Local contract, mock/consumer, synthetic fixtures dan runnable UI evidence kini tersedia dan verified untuk bounded offline scope. Human experience baseline tetap DRAFT; upstream qualification dan dependency/model qualification belum tersedia. Semua integration/delivery goals tetap blocked. Tidak ada production gateway, live inference, data nyata atau model install pada hasil ini.
 
 ## High-Level Design
 
@@ -45,7 +45,7 @@ ui_delivery_profile: HIGH_INTERACTION
 ui_contract_readiness: BLOCKED  
 topology: NETWORKED  
 Contract version: 1.0.0  
-Execution authorization: belum diberikan.  
+Execution authorization: GOAL-001 bounded offline scope authorized oleh user `$sc-work .scratch\promptshield-v1\issues\01-local-contract-enabler.md`, 2026-10-04; GOAL-002..010 belum diotorisasi.
 Board: [.scratch/promptshield-v1/issues](../../.scratch/promptshield-v1/issues/01-local-contract-enabler.md).
 
 Canonical cross-artifact references memakai `ARTIFACT#ID`. Rentang/slash grouping pada prose adalah shorthand manusia; pointer memakai exact qualified IDs. `TDEC-*` APPROVED sebagai kontrak desain dalam scope FSD. Approval tidak mengisi fakta yang masih OPEN, membuktikan compatibility, atau memberikan execution authorization.
@@ -208,7 +208,7 @@ Parser memakai safe YAML load setelah dependency pin; bounded file size 64 KiB, 
 
 ### 7.2 Exact local control semantics — CONTRACT-001 / SCHEMA-001 @1.0.0
 
-Delegated machine contract planned `contracts/promptshield/local-v1.json`. Equivalent structured contract definition, bukan generic REST/OpenAPI API ke provider. Validation/generation terbatas pada DTO discriminants/fields berikut; tidak membangun schema framework umum. JSON unknown fields/duplicate keys/nonfinite values rejected; identifiers lowercase hex 32 chars, versions integer 1..2^53-1; no free-form metadata payload.
+Delegated machine contract materialized di `contracts/promptshield/local-v1.json` oleh GOAL-001. Equivalent structured contract definition, bukan generic REST/OpenAPI API ke provider. Validation/generation terbatas pada DTO discriminants/fields berikut; tidak membangun schema framework umum. JSON unknown fields/duplicate keys/nonfinite values rejected; identifiers lowercase hex 32 chars, versions integer 1..2^53-1; no free-form metadata payload. Exact field names dan fixed primitive/enum definition dimiliki machine asset; prototype dan mock memuat definition yang sama.
 
 Common request fields: `schema_version=1`, `id`, `instance_id`, `op`; envelope length <=64 KiB. Operations:
 
@@ -238,7 +238,7 @@ Planned `contracts/promptshield/audit-v1.json`. Allowed fields: schema_version=1
 
 CLI control UI Bahasa Indonesia, literal mode values/OFF preserved. Native Codex screen tetap native. `ai-guard review --session <local-id>` di terminal terpisah tidak membaca stdin Codex. Keyboard numbered choices lalu Enter; tidak ada sensitive action default pada empty Enter. Ctrl+C cancels selected pending action and exits reviewer; disconnected reviewer request stays pending sampai deadline, tidak auto-approved. Static plain output tidak memakai cursor rewriting; TTY output harus menjaga logical focus dan cancel visibility. Unknown selection menghasilkan error dekat choice tanpa reset unrelated draft/status.
 
-Production typed consumer planned `src/promptshield/adapters/control_dto.py` dan mock provider planned `tests/contracts/mock_control.py` sama-sama derive SCHEMA-001, bukan hand-copied shapes. GOAL-001 menghasilkan typed consumer prototype hanya di `.scratch/prototypes/promptshield-ui-v1/`; tidak menulis `src/`. Production consumer kelak diturunkan langsung dari machine contract, tidak menyalin prototype. Fixture catalog `tests/fixtures/synthetic/contracts-v1.json`, revision 1.0.0. Prototype memakai fixture catalog dan in-process transport; no live inference/tools/.env. Screenshots/transcript hanya synthetic safe metadata.
+Production typed consumer tetap planned di `src/promptshield/adapters/control_dto.py`. Materialized mock `tests/contracts/mock_control.py` dan typed consumer prototype `.scratch/prototypes/promptshield-ui-v1/control_dto.py` sama-sama derive SCHEMA-001, bukan hand-copied shapes. GOAL-001 tidak menulis `src/`. Production consumer kelak diturunkan langsung dari machine contract, tidak menyalin prototype. Materialized fixture catalog `tests/fixtures/synthetic/contracts-v1.json`, revision 1.0.0. Prototype memakai fixture catalog dan in-process transport; no live inference/tools/.env. Transcript hanya synthetic safe metadata.
 
 | Mapping ID | Journey / data dan action | PRD state refs | Contract / schema / result-error | Fixture / verification |
 |---|---|---|---|---|
@@ -262,12 +262,12 @@ Hover/touch/mobile/browser ARIA: N/A untuk native CLI MVP. Selection/focus/press
 
 | Contract / schema @1.0.0 | Planned artifact | Status |
 |---|---|---|
-| CONTRACT-001 / SCHEMA-001 | `contracts/promptshield/local-v1.json` | Definition in Section 7; machine asset absent; GOAL-001 |
+| CONTRACT-001 / SCHEMA-001 | `contracts/promptshield/local-v1.json` | Materialized @1.0.0; TEST-001/002 verified MOCK offline; GOAL-001 |
 | CONTRACT-002 / SCHEMA-003 | `contracts/promptshield/audit-v1.json` | Section 7.3 semantics; machine asset absent; GOAL-009 |
 | CONTRACT-003 / SCHEMA-004 | `contracts/promptshield/codex-subscription-v1.json` | Exact native request/event/auth inventory blocked OPEN-001/002/003; not guessed |
 | CONTRACT-004 / SCHEMA-002 | `contracts/promptshield/config-v1.json` | Section 7.1 semantics; machine asset absent; GOAL-008 |
 
-Machine assets listed as **planned**, not existing paths/evidence. Initial index intentionally lists no materialized schema revision, derived asset or executed schema lint; readiness cannot pass just because planned TEST IDs exist. Once assets/evidence exist, owning `/sc-plan` pins digest/revision/result before promotion.
+CONTRACT-001 machine asset dan derived local evidence kini ada. CONTRACT-002..004 tetap planned. Owning `/sc-plan` evidence reconciliation pins local revision/derived identity berikut tanpa mempromosikan production goals. Digest dan executed results ada dalam [GOAL-001 verification](../../.scratch/prototypes/promptshield-ui-v1/VERIFICATION.md) dan [scenario report](../../.scratch/prototypes/promptshield-ui-v1/evidence/scenario-report.json).
 
 ```yaml
 ui_api_contract:
@@ -279,13 +279,13 @@ ui_api_contract:
   authority: FSD-PROMPTSHIELD-V1@1.1#CONTRACT-001
   reviewer: user-product-owner-and-maintainer
   network_actions: [submit_inference]
-  schema_ref: []
-  revision: []
-  schema_revision: []
+  schema_ref: [contracts/promptshield/local-v1.json]
+  revision: [1.0.0]
+  schema_revision: [1.0.0]
   fixture_catalog: tests/fixtures/synthetic/contracts-v1.json
-  generated_from: []
-  schema_lint_refs: []
-  fixture_validation_refs: []
+  generated_from: [SCHEMA-001@1.0.0, SCHEMA-001@1.0.0]
+  schema_lint_refs: [FSD-PROMPTSHIELD-V1#TEST-001]
+  fixture_validation_refs: [FSD-PROMPTSHIELD-V1#TEST-001]
   provider_contract_refs: [FSD-PROMPTSHIELD-V1#TEST-001, FSD-PROMPTSHIELD-V1#TEST-003]
   consumer_contract_refs: [FSD-PROMPTSHIELD-V1#TEST-002, FSD-PROMPTSHIELD-V1#TEST-003]
   responsive_accessibility_qa_refs: [FSD-PROMPTSHIELD-V1#TEST-002, FSD-PROMPTSHIELD-V1#TEST-011]
@@ -293,9 +293,9 @@ ui_api_contract:
   blocking_open_refs: [FSD-PROMPTSHIELD-V1#OPEN-001, FSD-PROMPTSHIELD-V1#OPEN-002, FSD-PROMPTSHIELD-V1#OPEN-003, FSD-PROMPTSHIELD-V1#OPEN-006, FSD-PROMPTSHIELD-V1#OPEN-007]
 ```
 
-Direction approved != verified interaction. Human approval diterima; `experience_baseline_status` baru VALIDATED setelah runnable behavior evidence ditinjau. Tidak ada exception risk/runtime yang diasumsikan dari approval design. Evidence interaksi belum ada.
+Direction approval tetap berlaku. Runnable offline evidence tersedia dan telah direview Codex sebagai EVIDENCE; user-product-owner review/native placement masih OPEN-007. `experience_baseline_status` tetap DRAFT dan readiness BLOCKED. Dua `generated_from` entries mewakili distinct mock provider dan typed prototype consumer dari SCHEMA-001 yang sama; locators/digests tercatat dalam scenario report. Tidak ada production consumer atau risk exception yang diasumsikan.
 
-Evidence checklist untuk prototype kelak: source digest, contract/fixture versions, environment, command, reviewer/date dan `discard|revise|promote decision` disposition. Checklist ini bukan locator hasil verification.
+Runnable evidence: `.scratch/prototypes/promptshield-ui-v1/evidence/scenario-report.json`, source digest dan contract/fixture version 1.0.0; review classification EVIDENCE pada [verification record](../../.scratch/prototypes/promptshield-ui-v1/VERIFICATION.md), 2026-10-04, Codex agent sequential. Disposition `promote decision` hanya untuk already-approved local behavior, bukan production code. Human product review belum direkam.
 
 ## 9. Security, Privacy dan Threat Controls
 
@@ -323,7 +323,7 @@ Privacy obligations inherited PRD#PRIV-001..004/FR-024: reversible tokenization 
 
 ### 10.1 Planned executable verification contract
 
-Commands below adalah **future artifacts**, tidak dijalankan pada planning dan files belum dibuat. Tests use `unittest` public seams; native live qualification opt-in only, separate protected synthetic workspace, authorized subscription account. No inference/quota or tool invocation hidden in offline test.
+TEST-001/002 kini materialized dan verified oleh GOAL-001; results ada dalam Section 16. TEST-003..011 tetap **future artifacts** dan tidak dijalankan pada planning. Tests use `unittest` public seams; native live qualification opt-in only, separate protected synthetic workspace, authorized subscription account. No inference/quota or tool invocation hidden in offline test.
 
 | ID | Future command / evidence | Obligation / exact decision refs |
 |---|---|---|
@@ -367,7 +367,7 @@ GOAL-001..GOAL-010 are the sole authored goal serialization. Suggested branches 
 - Technical refs: TDEC-001, TDEC-007; dependencies: None.
 - Scope: `contracts/promptshield/local-v1.json`, `tests/contracts/`, `tests/fixtures/synthetic/contracts-v1.json`, `.scratch/prototypes/promptshield-ui-v1/`; fixture/consumer code there only. No `src/`, user-global config, credentials, real data, code/model dependency install or upstream endpoint discovery.
 - Verification refs: TEST-001, TEST-002. Done: machine/projection parity and abuse fixtures pass; keyboard/plain/80/120-column walkthrough evidence reviewed, source digest recorded; classify `/sc-ui` evidence and update owning authority through `/sc-prd`/`/sc-plan` without promoting prototype code.
-- Stop: OPEN-009 pending separate execution authorization; FSD sudah approved. Upstream/production compatibility gaps do not block this offline scope. Any requested behavior beyond approved UI/Section 7 returns owning authority. Suggested branch `feat/promptshield-local-contract`.
+- Stop: OPEN-009 resolved untuk GOAL-001 oleh separate execution request, 2026-10-04. Upstream/production compatibility gaps do not block this offline scope. Any requested behavior beyond approved UI/Section 7 returns owning authority. Suggested branch `feat/promptshield-local-contract`; execution memakai existing non-protected `feat/promptshield-v1` tanpa Git mutation.
 
 ### GOAL-002 — First native subscription protected turn
 
@@ -494,7 +494,7 @@ Upstream BRD BREQ/BA coverage melalui approved PRD traceability; BA-009 Desktop 
 
 ### 13.2 Ten-dimension review
 
-Planning verification verdict: **NEEDS REVISION untuk full integration/execution** — material upstream/OS/dependency contracts dan UI evidence masih OPEN. **Offline enabler contract sudah approved**, dengan scope/DTO/mock/test authority yang dibatasi; UI/API readiness belum pass dan execution authorization belum diberikan. Whole-plan readiness failure tidak dinamai PASS WITH NOTES - ENABLER_ONLY hanya karena FSD telah disetujui. Semua issue tetap blocked; no runtime tests executed in `/sc-plan`.
+Planning verification verdict tetap **NEEDS REVISION untuk full integration/execution** — material upstream/OS/dependency contracts dan human experience baseline masih OPEN. **Offline enabler kini verified** setelah separate execution authorization dan TEST-001/002; UI/API readiness belum pass. Whole-plan readiness failure tidak dinamai PASS WITH NOTES - ENABLER_ONLY. GOAL-002..010 tetap blocked; no production runtime tests executed.
 
 | Dimension | Review target |
 |---|---|
@@ -505,9 +505,9 @@ Planning verification verdict: **NEEDS REVISION untuk full integration/execution
 | 5 Scope | PASS planning inspection: MVP only, ten outcomes; enabler no production integration |
 | 6 Must-haves | PASS planning inspection: modes/review/hold/cleanup/status/config/self-test/release errors mapped |
 | 7 Sizing | NOTE: GOAL-002 single risky tracer; if qualification expands scope, reslice before execution |
-| 8 Tests | PASS plan only: public synthetic + native/live opt-in, negative race/leak/stream cases; no tests executed |
+| 8 Tests | TEST-001/002 local checks PASS execution; planned native/live tests and remaining production suites belum dijalankan |
 | 9 Decisions | PASS exact-ID coverage: TDEC-001..010 approved design have goal/test refs; execution tetap menunggu authorization/readiness |
-| 10 UI/API | BLOCKED: HIGH_INTERACTION; no proven interaction/machine assets; only bounded enabler candidate after approval |
+| 10 UI/API | BLOCKED for production: local machine/interaction assets verified; HIGH_INTERACTION human baseline/native qualification belum complete |
 
 ## 14. OPEN Records dan Handoff
 
@@ -519,13 +519,13 @@ Planning verification verdict: **NEEDS REVISION untuk full integration/execution
 | OPEN-004 / OPEN | Laya actual API/checkpoint/threshold/windows quality/CPU/RAM and model license/digests; PRD OPEN-RESEARCH-002; TDEC-004/010, GOAL-006 | Maintainer/QA; before detector contract freeze. No silent detector/model replacement or false span claim |
 | OPEN-005 / OPEN | Minimum hardware/corpus sizes/language gates/final performance and supported pilot scope; PRD OPEN-PRODUCT-001/002; GOAL-006/008/010 | Product/security/QA; before eval/install/release acceptance. Candidate defaults remain measured proposals |
 | OPEN-006 / OPEN | Exact production CPython/packages/lock/model provenance/Windows wheels/IPC library choice and vulnerability posture; TDEC-010, GOAL-002/003/006/008 | Maintainer/security; before product dependency install/code. Offline stdlib enabler independent; no claim ML support on observed Python 3.14.7 |
-| OPEN-007 / OPEN | Runnable UI timing/focus/terminal evidence; PRD OPEN-UI-001/002; Section 8, GOAL-001/002 | UI/product reviewer; design approved, runtime not proven. GOAL-001 builds bounded evidence after FSD approval/execution; baseline stays DRAFT until reviewed |
+| OPEN-007 / OPEN (evidence available) | Offline runnable UI evidence tersedia; human baseline/native placement review masih pending; PRD OPEN-UI-001/002; Section 8, GOAL-002 | UI/product reviewer; [GOAL-001 verification](../../.scratch/prototypes/promptshield-ui-v1/VERIFICATION.md) passes local checks. Baseline stays DRAFT; no native integration proof |
 | OPEN-008 / OPEN | Named org risk owners/lawful processing/vendor/transfer/retention/DPIA/managed policy; PRD OPEN-PRODUCT-003/OPEN-PRIVACY-001; GOAL-010 | Organization privacy/security owner; before real-data pilot. Synthetic-only scope does not require inventing legal acceptance |
-| OPEN-009 / OPEN | Separate execution authorization untuk GOAL; FSD approval RESOLVED pada revision 1.1 | User pemohon; current request mengizinkan commit/push saja. No runtime/prototype/product source mutation under Git delivery |
+| OPEN-009 / RESOLVED for GOAL-001 only | Separate execution authorization diterima melalui user `$sc-work .scratch\promptshield-v1\issues\01-local-contract-enabler.md`, 2026-10-04; FSD approval tetap revision 1.1 | User pemohon; bounded offline contract/fixture/prototype scope boleh dieksekusi. GOAL-002..010 tetap blocked; tidak mengotorisasi production, live inference, model install atau Git delivery hasil implementasi |
 
 Resolved business decisions not reopened: BRD DEC-001 subscription, DEC-002 answer-only restoration/held tools; PRD approval and UI direction/Indonesian labels accepted. Research failure may require scoped product change but never authorizes unsupported fallback.
 
-Handoff order: FSD **approved** → current authorized commit/push → separate GOAL-001 execution authorization. Owning workflow generates machine/prototype evidence; `/sc-ui` returns review, `/sc-prd` absorbs validated baseline. Targeted subscription/OS/model qualification fills OPEN-001..006 before material integration contracts are finalized/enabled. `/sc-plan` refreshes readiness index/evidence and releases only GOAL-002 once gate passes; other slices require that real first slice `verified`. No additional approval of derived pointer/board fixes when semantics unchanged. Material technical or risk change returns technical owner.
+Handoff order: GOAL-001 offline checks/evidence verified → `/sc-ui` human baseline/native placement review → `/sc-prd` absorbs validated baseline. Targeted subscription/OS/model qualification fills OPEN-001..006 before material integration contracts are finalized/enabled. `/sc-plan` index now pins local assets and releases only GOAL-002 once all readiness gates pass and its execution is authorized; other slices require that real first slice `verified`. No additional approval of derived pointer/board fixes when semantics unchanged. Material technical or risk change returns technical owner.
 
 ## 15. Document Verification Record
 
@@ -540,3 +540,11 @@ Initial high-interaction marker sempat PASS karena regex membaca evidence checkl
 Tidak ada code tests/live inference/model installs/Git mutations/user Codex config changes pada tahap planning. Planned commands/assets bukan evidence PASS runtime.
 
 Source authority: linked approved BRD/PRD/user instructions. Procedures: `.agent/workflows/sc-plan.md`, writing-plans, issue-workflow, plan-verification and canonical UI readiness reference. Observed framework lessons advisory only; no framework public behavior changed.
+
+## 16. GOAL-001 Execution Evidence — 2026-10-04
+
+User `$sc-work .scratch\promptshield-v1\issues\01-local-contract-enabler.md` resolved separate execution authorization for this goal only. TEST-001: exit 0, 15 tests, no failures/skips. TEST-002: exit 0, 46 synthetic scenario runs, all twelve UI states at 80/120 columns. Source/fixture digests, commands/environment, test-first regressions, actual PTY observation, security review and read-only EVIDENCE classification are recorded in [verification](../../.scratch/prototypes/promptshield-ui-v1/VERIFICATION.md).
+
+Machine definition SHA-256: `6488cb724c62b633dfb4c5f8edd30bafccbe50cfe697bf6f064b9fee92c0f7f8`; fixture SHA-256: `57d53467b4ec06e59ea54eedb1e24177240640a50c74d408ade7b9e73b075c0e`. Typed dataclasses/immutable collections and mock validation derive directly from the machine definition. Consumer correlation checks enforce echoed ID/instance, operation result type, exact version increment, decision disposition and nondecreasing observed policy versions.
+
+GOAL-001 is verified for its local contract and mock evidence, not product integration or human UAT. PRD human baseline remains DRAFT. OPEN-001..008 remain applicable to production. Refreshed readiness-gate exits 1 with verdict BLOCKED only for `baseline` and `open-blockers`; revisions, derived-assets, verification-refs, runnable evidence and the issue DAG pass. The earlier planning failure list in Section 15 is historical, not the current result. No framework changes were required.

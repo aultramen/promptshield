@@ -1,0 +1,14 @@
+PromptShield | SIMULASI OFFLINE | MOCK | integrasi belum diverifikasi
+Detect Only degraded: konten asli dapat dikirim. Perbaiki engine lokal.
+Sesi lokal: 22222222222222222222222222222222
+Status: DEGRADED | mode: detect-only
+Detect Only: konten asli dapat dikirim, tanpa masking.
+Mode request aktif: None | mode berikutnya: detect-only
+Map: empty | policy version: 1
+Required engines: regex belum siap, secret-scanner belum siap, dictionary belum siap, laya belum siap
+NOT_READY: protected send diblokir. Periksa engine dan konfigurasi lokal.
+EMPTY: tidak ada tindakan tertunda. Pilih sesi atau mulai request baru.
+m Mode | v Verbose metadata | r Refresh | c Cancel request aktif | s Stop | q Keluar
+Ketik pilihan lalu Enter. Enter kosong tidak menyetujui tindakan. Ctrl+C membatalkan pilihan aktif.
+> q
+Reviewer ditutup. Tindakan pending mengikuti deadline.

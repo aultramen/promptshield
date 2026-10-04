@@ -1,0 +1,11 @@
+TOOL_GATE_LIMIT: Tool gate melewati batas. Call tetap ditahan; batalkan dan buat
+task baru.
+PromptShield | SIMULASI OFFLINE | MOCK | integrasi belum diverifikasi
+Simulasi batas tool gate; tidak ada executable output.
+EMPTY: tidak ada tindakan tertunda. Pilih sesi atau mulai request baru.
+m Mode | v Verbose metadata | r Refresh | c Cancel request aktif | s Stop | q
+Keluar
+Ketik pilihan lalu Enter. Enter kosong tidak menyetujui tindakan. Ctrl+C
+membatalkan pilihan aktif.
+> q
+Reviewer ditutup. Tindakan pending mengikuti deadline.

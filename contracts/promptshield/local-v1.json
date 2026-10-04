@@ -1,0 +1,65 @@
+{
+  "id": "CONTRACT-001",
+  "schema_id": "SCHEMA-001",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "authority": "FSD-PROMPTSHIELD-V1@1.1#CONTRACT-001",
+  "max_bytes": 65536,
+  "enums": {
+    "mode": ["detect-first", "detect-only", "always-mask", "off"],
+    "state": ["NOT_READY", "EMPTY", "READY", "RECEIVED", "INSPECTING", "WAITING_USER", "PREPARED", "SENT", "STREAMING", "COMPLETED", "FAILED", "TOOL_HELD", "CANCELLED", "BLOCKED", "DEGRADED", "STOPPED"],
+    "category": ["SECRETS", "CREDENTIALS", "FINANCIAL", "PII", "INFRASTRUCTURE", "CUSTOM"],
+    "engine": ["regex", "secret-scanner", "dictionary", "laya"],
+    "token_store": ["empty", "active", "expired", "revoked"],
+    "action_kind": ["REQUEST_REVIEW", "TOOL_HELD"],
+    "decision": ["mask", "edit", "cancel", "manual", "variable"],
+    "purpose": ["CONNECTIVITY_CHECK", "FILE_ACTION", "GENERIC_TASK"],
+    "disposition": ["MASK", "EDIT", "CANCEL", "MANUAL_HANDOFF", "VARIABLE_GUIDANCE"],
+    "cancel_state": ["CANCELLED", "COMPLETED", "FAILED", "BLOCKED"],
+    "error_code": ["NOT_READY", "AUTH_REQUIRED", "AUTH_FAILED", "QUOTA_RESTRICTED", "MODEL_UNAVAILABLE", "DETECTOR_TIMEOUT", "DETECTOR_FAILED", "INPUT_LIMIT", "RESPONSE_LIMIT", "TIMEOUT", "UNSUPPORTED_CONTENT", "POLICY_INVALID", "FORBIDDEN", "STALE", "EXPIRED", "CANCELLED", "MAP_LIMIT", "MAP_EXPIRED", "TOOL_HELD", "TOOL_GATE_LIMIT", "STREAM_INVALID", "UPSTREAM_UNAVAILABLE", "INTERNAL_ERROR"]
+  },
+  "request_common": {"schema_version": "schema_version", "id": "id", "instance_id": "id", "op": "operation"},
+  "operations": {
+    "status": {"fields": {}, "result": "STATUS"},
+    "set_mode": {"fields": {"mode": "mode", "expected_policy_version": "version"}, "result": "MODE_RECEIPT"},
+    "set_verbose": {"fields": {"enabled": "bool", "expected_policy_version": "version"}, "result": "VERBOSE_RECEIPT"},
+    "list_pending": {"fields": {}, "result": "PENDING_LIST"},
+    "decide": {"fields": {"pending_id": "id", "pending_revision": "version", "decision": "decision"}, "result": "DECISION_RECEIPT"},
+    "cancel_request": {"fields": {"request_id": "id"}, "result": "CANCEL_RECEIPT"},
+    "stop": {"fields": {}, "result": "STOP_RECEIPT"}
+  },
+  "objects": {
+    "Status": {
+      "kind": {"const": "STATUS"},
+      "instance_id": "id",
+      "state": "state",
+      "effective_mode": "mode",
+      "policy_version": "version",
+      "active_request_mode": {"nullable": "mode"},
+      "next_mode": "mode",
+      "required_engines": {"map": "engine", "value": "bool", "complete": true},
+      "pending_count": {"int": [0, 8]},
+      "coverage_profile_id": "id",
+      "integration_verified": "bool",
+      "token_store_state": "token_store"
+    },
+    "PendingSummary": {
+      "pending_id": "id", "revision": "version", "action_kind": "action_kind",
+      "request_id": "id", "mode": "mode", "policy_version": "version",
+      "time_remaining": {"int": [0, 120]},
+      "categories": {"map": "category", "value": {"int": [0, 10000]}, "complete": false},
+      "permitted_decisions": {"array": "decision", "max": 3},
+      "purpose": "purpose"
+    },
+    "PendingList": {"kind": {"const": "PENDING_LIST"}, "pending": {"array": "PendingSummary", "max": 8}},
+    "DecisionReceipt": {"kind": {"const": "DECISION_RECEIPT"}, "state": "disposition"},
+    "ModeReceipt": {"kind": {"const": "MODE_RECEIPT"}, "policy_version": "version"},
+    "VerboseReceipt": {"kind": {"const": "VERBOSE_RECEIPT"}, "policy_version": "version"},
+    "CancelReceipt": {"kind": {"const": "CANCEL_RECEIPT"}, "state": "cancel_state"},
+    "StopReceipt": {"kind": {"const": "STOP_RECEIPT"}, "state": {"const": "STOPPED"}},
+    "SafeError": {"code": "error_code", "retryable": "bool"}
+  },
+  "results": {"STATUS": "Status", "PENDING_LIST": "PendingList", "DECISION_RECEIPT": "DecisionReceipt", "MODE_RECEIPT": "ModeReceipt", "VERBOSE_RECEIPT": "VerboseReceipt", "CANCEL_RECEIPT": "CancelReceipt", "STOP_RECEIPT": "StopReceipt"},
+  "decisions": {"REQUEST_REVIEW": ["mask", "edit", "cancel"], "TOOL_HELD": ["manual", "variable", "cancel"]},
+  "terminal_dispositions": {"mask": "MASK", "edit": "EDIT", "cancel": "CANCEL", "manual": "MANUAL_HANDOFF", "variable": "VARIABLE_GUIDANCE"}
+}
