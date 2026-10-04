@@ -2,7 +2,19 @@
 
 ## Summary
 
-Records public framework behavior changes and their verification evidence.
+Records PromptShield delivery evidence and retained framework history.
+
+## 2026-10-05 - PromptShield offline control contract
+
+- Added the local machine contract, immutable DTO consumer, synthetic mock,
+  fixture catalog, and keyboard review prototype for GOAL-001.
+- Reconciled PRD/FSD baseline evidence and GOAL-002 authorization; readiness
+  remains BLOCKED while human acceptance and native qualification are pending.
+- Product CI checks 17 contract/evidence/link tests and 46 terminal scenarios
+  on Ubuntu, Windows, and macOS. Historical source digests retain their original
+  bytes; integrity checks allow Git's LF/CRLF text conversion.
+- [Offline verification](.scratch/prototypes/promptshield-ui-v1/VERIFICATION.md)
+  records scope and limitations; no production integration is established.
 
 ## 2026-10-04 - Documentation quality, stage approvals, and prompt setup
 
