@@ -1,0 +1,315 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import test from 'node:test';
+
+import {
+    buildIndex,
+    globalKnowledgeFiles,
+    parseFrontmatter,
+    scoreQuery,
+    search,
+    splitEntries,
+    tokenize,
+} from './knowledge-search.mjs';
+
+function makeStore(t) {
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ks-test-'));
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    const dir = path.join(root, 'docs', 'solutions', 'config-issues');
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(
+        path.join(dir, 'worktree-lock.md'),
+        [
+            '---',
+            'category: config-issues',
+            'tags: git worktree lock',
+            '---',
+            '# Worktree lock contention',
+            'Parallel streams fail when git worktree lock is held. Use isolated worktrees.',
+        ].join('\n')
+    );
+    fs.writeFileSync(
+        path.join(dir, 'csv-preload.md'),
+        [
+            '# CSV preload regression',
+            'Preloading interface-design CSV data exploded token usage; retrieval-only fixed it.',
+        ].join('\n')
+    );
+    return root;
+}
+
+test('global store joins the corpus only when SC_GLOBAL_KNOWLEDGE_DIR points at a file', (t) => {
+    const root = makeStore(t);
+    const globalDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ks-global-'));
+    t.after(() => fs.rmSync(globalDir, { recursive: true, force: true }));
+    assert.deepEqual(globalKnowledgeFiles({}), []);
+    assert.deepEqual(globalKnowledgeFiles({ SC_GLOBAL_KNOWLEDGE_DIR: globalDir }), []);
+    fs.writeFileSync(
+        path.join(globalDir, 'LEARNED_KNOWLEDGE.md'),
+        [
+            '# Learned Knowledge',
+            '',
+            '## Quick Reference',
+            '',
+            '| ID | Scope | Confidence | Action rule (IF-THEN) |',
+            '| --- | --- | --- | --- |',
+            '| LRN-2026-09-02-001 | global | confirmed | IF replying THEN use the user language |',
+            '',
+            '---',
+            '',
+            '## LRN-2026-09-02-001 - reply language',
+            '- Learning: the user writes Indonesian; reply in Indonesian, technical terms verbatim.',
+            '- Confidence: confirmed',
+            '- Applies to: global',
+        ].join('\n')
+    );
+    const files = globalKnowledgeFiles({ SC_GLOBAL_KNOWLEDGE_DIR: globalDir });
+    assert.equal(files.length, 1);
+    assert.equal(files[0].global, true);
+    const hits = search({ root, files, query: 'reply language indonesian' });
+    assert.equal(hits[0].id, 'LRN-2026-09-02-001');
+    assert.equal(hits[0].path, 'global:LEARNED_KNOWLEDGE.md');
+    assert.equal(hits[0].category, 'global');
+    assert.equal(JSON.stringify(hits).includes(globalDir), false);
+});
+
+function makeMemoryStore(t) {
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ks-mem-'));
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    const docs = path.join(root, 'docs');
+    fs.mkdirSync(docs, { recursive: true });
+    fs.writeFileSync(
+        path.join(docs, 'ERROR_LOG.md'),
+        [
+            '# Error Log',
+            '',
+            '<!-- Entry format:',
+            '## ERR-YYYY-MM-DD-NNN - <error category>',
+            '-->',
+            '',
+            '## ERR-2026-08-19-001 - context overflow',
+            '- Symptom: compaction dropped goal state mid-loop.',
+            '- Prevention: IF context nears limit THEN checkpoint first.',
+            '',
+            '## ERR-2026-08-20-002 - worktree lock contention',
+            '- Symptom: parallel streams fail when git worktree lock is held.',
+            '- Prevention: IF running parallel streams THEN use isolated worktrees.',
+        ].join('\n')
+    );
+    fs.writeFileSync(
+        path.join(docs, 'progress.md'),
+        [
+            '# Progress Log',
+            '',
+            '## Codebase Patterns',
+            '- Context contracts are the first runtime layer.',
+            '',
+            '---',
+            '',
+            '## 2026-08-20 10:00 - zeppelin telemetry session',
+            '- Implemented: zeppelin telemetry probes.',
+        ].join('\n')
+    );
+    return root;
+}
+
+test('tokenize lowercases and drops punctuation and single chars', () => {
+    assert.deepEqual(tokenize('Git-Worktree LOCK! a'), ['git', 'worktree', 'lock']);
+});
+
+test('parseFrontmatter splits meta and body, tolerates absence', () => {
+    const parsed = parseFrontmatter('---\ncategory: x\n---\n# T\nbody');
+    assert.equal(parsed.meta.category, 'x');
+    assert.match(parsed.body, /# T/);
+    const bare = parseFrontmatter('# Only body');
+    assert.deepEqual(bare.meta, {});
+});
+
+test('BM25 ranks the on-topic doc first and caps results', (t) => {
+    const root = makeStore(t);
+    const hits = search({
+        root,
+        dirs: ['docs/solutions'],
+        query: 'git worktree lock',
+        limit: 3,
+    });
+    assert.ok(hits.length >= 1);
+    assert.match(hits[0].path, /worktree-lock\.md$/);
+    assert.equal(hits[0].category, 'config-issues');
+    assert.ok(hits[0].snippet.length <= 240);
+});
+
+test('no match returns empty result set', (t) => {
+    const root = makeStore(t);
+    const hits = search({
+        root,
+        dirs: ['docs/solutions'],
+        query: 'quantum entanglement billing',
+        limit: 3,
+    });
+    assert.equal(hits.length, 0);
+});
+
+test('missing directory is tolerated', (t) => {
+    const root = makeStore(t);
+    const hits = search({
+        root,
+        dirs: ['docs/does-not-exist'],
+        query: 'anything',
+        limit: 3,
+    });
+    assert.equal(hits.length, 0);
+});
+
+test('scoreQuery is deterministic for tie ordering', () => {
+    const files = ['/a.md', '/b.md'];
+    const readFile = () => '# Same\nidentical content tokens here';
+    const index = buildIndex(files, readFile);
+    const first = scoreQuery(index, 'identical content');
+    const second = scoreQuery(index, 'identical content');
+    assert.deepEqual(
+        first.map((r) => r.doc.file),
+        second.map((r) => r.doc.file)
+    );
+});
+
+test('splitEntries splits on ## headings and drops template comments', () => {
+    const entries = splitEntries(
+        '<!--\n## ERR-YYYY-MM-DD-NNN - template\n-->\n## ERR-2026-01-01-001 - real\nbody text'
+    );
+    assert.deepEqual(
+        entries.map((e) => e.heading),
+        ['ERR-2026-01-01-001 - real']
+    );
+    assert.match(entries[0].text, /body text/);
+});
+
+test('multi-entry files rank at entry granularity with ERR ids', (t) => {
+    const root = makeMemoryStore(t);
+    const hits = search({
+        root,
+        files: ['docs/ERROR_LOG.md'],
+        query: 'worktree lock contention',
+        limit: 3,
+    });
+    assert.ok(hits.length >= 1);
+    assert.equal(hits[0].id, 'ERR-2026-08-20-002');
+    assert.equal(hits[0].path, 'docs/ERROR_LOG.md');
+    assert.match(hits[0].title, /worktree lock contention/);
+});
+
+test('entries without ERR/LRN ids get stable file+heading ids', (t) => {
+    const root = makeMemoryStore(t);
+    const hits = search({
+        root,
+        files: [{ file: 'docs/progress.md', section: 'Codebase Patterns' }],
+        query: 'runtime layer contracts',
+        limit: 3,
+    });
+    assert.equal(hits.length, 1);
+    assert.equal(hits[0].id, 'docs/progress.md#Codebase Patterns');
+});
+
+test('progress head section is indexed; dated entries are not', (t) => {
+    const root = makeMemoryStore(t);
+    const hits = search({
+        root,
+        files: [{ file: 'docs/progress.md', section: 'Codebase Patterns' }],
+        query: 'zeppelin telemetry probes',
+        limit: 3,
+    });
+    assert.equal(hits.length, 0);
+});
+
+test('missing memory files are skipped silently', (t) => {
+    const root = makeMemoryStore(t);
+    const hits = search({
+        root,
+        files: ['docs/LEARNED_KNOWLEDGE.md'],
+        query: 'anything at all',
+        limit: 3,
+    });
+    assert.equal(hits.length, 0);
+});
+
+test('dirs plus missing default files match dirs-only results', (t) => {
+    const root = makeStore(t);
+    const dirsOnly = search({
+        root,
+        dirs: ['docs/solutions'],
+        query: 'git worktree lock',
+        limit: 3,
+    });
+    const withFiles = search({
+        root,
+        dirs: ['docs/solutions'],
+        files: [
+            'docs/ERROR_LOG.md',
+            'docs/LEARNED_KNOWLEDGE.md',
+            { file: 'docs/progress.md', section: 'Codebase Patterns' },
+        ],
+        query: 'git worktree lock',
+        limit: 3,
+    });
+    assert.deepEqual(withFiles, dirsOnly);
+    assert.equal(dirsOnly[0].id, dirsOnly[0].path);
+});
+
+test('entry results stay top-3 and snippet-bounded as entries grow', (t) => {
+    const root = makeMemoryStore(t);
+    const lines = ['# Learned Knowledge', ''];
+    for (let i = 1; i <= 8; i += 1) {
+        lines.push(`## LRN-2026-08-20-00${i} - retrieval habit ${i}`);
+        lines.push('- Learning: retrieval keeps memory cost flat and bounded.');
+        lines.push('');
+    }
+    fs.writeFileSync(path.join(root, 'docs', 'LEARNED_KNOWLEDGE.md'), lines.join('\n'));
+    const hits = search({
+        root,
+        files: ['docs/LEARNED_KNOWLEDGE.md'],
+        query: 'retrieval memory cost',
+    });
+    assert.equal(hits.length, 3);
+    for (const hit of hits) {
+        assert.match(hit.id, /^LRN-2026-08-20-00\d$/);
+        assert.ok(hit.snippet.length <= 240);
+    }
+});
+
+test('explicit stale and superseded entries are diagnostic-only; applicability keeps general rules', () => {
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'knowledge-status-'));
+    try {
+        fs.mkdirSync(path.join(root, 'docs'), {recursive: true});
+        fs.writeFileSync(path.join(root, 'docs/LEARNED_KNOWLEDGE.md'), '# Memory\n\n## LRN-2026-10-03-001 - retry\n- Status: SUPERSEDED by LRN-2026-10-03-002\n- Learning: retry timeout\n\n## LRN-2026-10-03-002 - retry\n- Learning: retry timeout\n- Project: other\n\n## LRN-2026-10-03-003 - retry\n- Learning: retry timeout\n- Applies to: general\n');
+        const options = {root, files: ['docs/LEARNED_KNOWLEDGE.md'], query: 'retry timeout'};
+        assert.ok(!search(options).some(h => h.id.endsWith('001')));
+        assert.ok(search({...options, diagnostic: true}).some(h => h.id.endsWith('001')));
+        assert.deepEqual(search({...options, project: 'current'}).map(h => h.id), ['LRN-2026-10-03-003']);
+    } finally { fs.rmSync(root, {recursive:true, force:true}); }
+});
+
+test('calibration and held-out relevance retain aliases, reject contradictions, and preserve general rules', (t) => {
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'knowledge-heldout-'));
+    t.after(() => fs.rmSync(root, {recursive:true, force:true}));
+    const fixture = JSON.parse(fs.readFileSync(new URL('../evals/knowledge-relevance.json', import.meta.url), 'utf8'));
+    const dir = path.join(root, 'docs/solutions');
+    fs.mkdirSync(dir, {recursive:true});
+    for (const doc of fixture.documents) fs.writeFileSync(path.join(dir, `${doc.id}.md`), `---\n${Object.entries(doc.meta).map(([k,v]) => `${k}: ${v}`).join('\n')}\n---\n${doc.body}`);
+    for (const group of ['calibration','held_out']) for (const item of fixture[group]) {
+        const hits = search({root, dirs:['docs/solutions'], ...item});
+        assert.equal(hits[0]?.id, `docs/solutions/${item.expected}.md`, `${group}: ${item.query}`);
+        assert.ok(!hits.some(h => /stale-retry|contradiction|other-project/.test(h.id)));
+    }
+});
+
+test('quoted stale metadata and feedback logs do not pollute default retrieval', (t) => {
+    const root=fs.mkdtempSync(path.join(os.tmpdir(),'quoted-status-'));
+    t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+    fs.mkdirSync(path.join(root,'docs/solutions'),{recursive:true});
+    fs.mkdirSync(path.join(root,'docs/learnings'),{recursive:true});
+    fs.writeFileSync(path.join(root,'docs/solutions/old.md'),'---\nstatus: "stale"\n---\n# Timeout\nTimeout retry.\n');
+    fs.writeFileSync(path.join(root,'docs/learnings/knowledge-feedback.md'),'# Feedback\nTimeout timeout retry retry.\n');
+    assert.deepEqual(search({root,dirs:['docs/solutions','docs/learnings'],query:'timeout retry'}), []);
+});

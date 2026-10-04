@@ -1,0 +1,1894 @@
+{
+  "schema": 1,
+  "sourceDigest": "7aff757d73cddcdcd19fe414e4833c7dc3be27776579215d0c949ac299278b29",
+  "hosts": [
+    "codex"
+  ],
+  "files": {
+    ".agent/context/agent-index.md": {
+      "hash": "105255d81c0185853ed818fb6ca195680e4d7ae7986ada469e0602e15716de3c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/agent-models.json": {
+      "hash": "7d2cb74ae16ad3a2052ae8bc9a98ea013e6851adb00c2e59f78fdef867d49d75",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/hook-index.md": {
+      "hash": "73cecdb9613a03b6bf47e6343323429a19e49dcc898e98fc1d46fdaab8cb2067",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/output-budgets.json": {
+      "hash": "ca63a13ba8c0198c55d8fc43130b0e3776f22741fae7767c571d13e7f643e94f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/output-style.md": {
+      "hash": "699228d19824157792ec6341a4edf3e44c455eef7c575e1a4d4450cb794f13cc",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/retired-assets.json": {
+      "hash": "4802cefdd5c16b47bc153818840c55d54786e3830c593957fadacdf039ffdba2",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/routing-index.md": {
+      "hash": "0266d4c4caab460edaa6c18d2ce41b05c276c2424b177d62bc5bf1e7004b3479",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/rule-index.md": {
+      "hash": "c9a67e175e85ffdc923b6509d0a34f0c266f9e7aa2cce4d83b5636c826cfee9b",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/skill-index.md": {
+      "hash": "a99fb22010a97d6b3e82a49e8a0a7d71dcf82d50b7f48c7d8ee2737360073e90",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/skills/delivery-planning.contract.md": {
+      "hash": "2f67d136adec914e445c8687e8d6c31fad410e03e32ed8fd79dae3183b672aa7",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/skills/execution-verification.contract.md": {
+      "hash": "8ffdd3bebf7510ae5809c9dc1cdad97a649a058eb8afe464ffc9e785de9f2426",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/skills/git-workflow-operation.contract.md": {
+      "hash": "97e37a7acf797536591abd6efaf224f10739411346c11c38616837b2fe4be651",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/skills/interface-design.contract.md": {
+      "hash": "81c2153326fba811391a4e6260a69999995644d31e61bea84d15c52c9b45cc8e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/skills/risk-audit.contract.md": {
+      "hash": "3478436626127f14ba509c7f0120f0fee68d97334b5dfa7ce44fe0c981f0ebab",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/skills/sc-plan.contract.md": {
+      "hash": "2a944109e3a551edba8b42b64354572fd15c8e967df35d5676a80cf382aacd10",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/skills/sc-work.contract.md": {
+      "hash": "f523824300c1bd960b844bc471fdff846328543872c93ff5e799a72cb67dff91",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/template-index.md": {
+      "hash": "a10acc5336bc84f3026c91b631f17930c756e476e91384f3054737888dd533ae",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/token-budget-gates.md": {
+      "hash": "a8a3933c0a0851ad6a48eaf9ec87c08181b64f167df402767aa52595902f9077",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflow-dispatch.md": {
+      "hash": "ba27332440da133a8d01e733d881275e7e7fc870f3e22b69e58fc280b1d043ac",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflow-invariants.json": {
+      "hash": "61b644c07101a457d51f86853fc1cc179cb904c5e7afa537eacfff1df3fbd3ba",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-audit.contract.md": {
+      "hash": "212c17455b661ad3a9a5c0feb14c7efbe16b179f804861ecb06811707ec85d32",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-compound.contract.md": {
+      "hash": "33fc3e5b388e0903907a46c7a842e1bd346d6467fca29ceb1a6042c0dc210f22",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-debug.contract.md": {
+      "hash": "94f9ad44a22d842db5fea56e1f2c1a61e6e983817be936c0b7503dfcbf5bd7cd",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-eval.contract.md": {
+      "hash": "fd1bf2de3aa9e518fb7d3592e645ea9663628941b7a9d3ba0e2493e25c90b198",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-evolve.contract.md": {
+      "hash": "27f62312c6a4752ba07acb13814c821567fcbb5f83525d2262b575b2d14ee583",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-explore.contract.md": {
+      "hash": "2a1b8e50f75470ae6443108b67c20cd21e872626e3ba92861815ce9876b5592e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-geniusloop.contract.md": {
+      "hash": "a226398bcf21a3b2c1093e08311279ee11c5882b83953f9a83c4978a519cfe32",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-go.contract.md": {
+      "hash": "bb41f9a52a9b4dba3d059f6b39ff02954825a58780bf023d5c21c071428d5f83",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-init.contract.md": {
+      "hash": "08aa81088fe8a9fe8ce4d8c17a944f35975f4feb0e6c60b9add7796b6d5576cb",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-launch.contract.md": {
+      "hash": "18c00093007a9901798e62a2040f689dc9da92c49a2fe0b715edc1acedb5319e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-pause.contract.md": {
+      "hash": "9e66e8d49b0f7bc83cdb42f755456874478d711dd7b82d9f7ce1cf1743aa0ea6",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-plan.contract.md": {
+      "hash": "65f8cb69980de34a2e699088c21e522270d645263e4c01987727da986dfd39ad",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-prd.contract.md": {
+      "hash": "ebb71947912f238673a58495e4f9acbafd156ca53e4306db7ec1013d2ceacb91",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-research.contract.md": {
+      "hash": "b30653e2d499bcc5337c68ce9307bc06933cde91dde7ac79e3044fd20a1e0904",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-review.contract.md": {
+      "hash": "de14cc80ef4ced0e3174c5801faceeeeb6e69300be286a851c223a67be404f4f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-status.contract.md": {
+      "hash": "5497c44c32bb4a8e10b9a0a0c017abd1471f913e6d28639824a447d3de6e7ec6",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-ui.contract.md": {
+      "hash": "ca2286d8ae433b3f3d45d2586dfe8c752c864c50b68c8886261b932bc977735b",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/context/workflows/sc-work.contract.md": {
+      "hash": "3b5fcd1c4f63ae49647adca6f78cf9699d7c5748a7061390e91a68c4af06c21c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-audit.md": {
+      "hash": "cfe056855ea09e922e7126294af997d926a8cbc3a4b143c8105132dd6ead3dbc",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-compound.md": {
+      "hash": "5a7f18b486cb523b276bca710de84f8117825a9b21647228f11d69a827effb74",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-debug.md": {
+      "hash": "e010d3274e6527c4ba0067d26a82f7b516e96c9ad910afe00fbd10b7ff6eade2",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-eval.md": {
+      "hash": "5e6b7319d8a2eaa81ede9e54c35810c91a6c279d5ede92a40d01a1d41008bc5d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-evolve.md": {
+      "hash": "4324f91614c6870d5185ead76112cba2af777848eff040b6ed833d7f719ed93f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-explore.md": {
+      "hash": "b321ab6536f972d42ace333f674813c14a0cac5357be4e17cb59687c005fe91f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-geniusloop.md": {
+      "hash": "24831b3d306abf6211eeb21aba8c676531c811627dd3d3955483762934950b43",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-go.md": {
+      "hash": "63d4f0bc93bae0b8a9ad8fdd656575ca52745c8a540c474f20bc86c0d03aa4fe",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-init.md": {
+      "hash": "8c50c6516f399cac02921d7d284b7370bb554afc7f9e85c2c0f95aa1f1a431eb",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-launch.md": {
+      "hash": "b8ccb267d8b098d9d2595fe93959b8e7b2e3de5c0552fcaeb39c4765db48c5ad",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-pause.md": {
+      "hash": "e022595ca996e9fd9a0d1c6fb75fde756d1dfed9bcafa716e907bdb3b63e2320",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-plan.md": {
+      "hash": "cf4f7999885c4aaa41a4e8a0a95294263d885985875ebd8b2c53397e0b02d839",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-prd.md": {
+      "hash": "504f1d31dd165157d1f012769dc9bf40eeac5d97aaab1adbb20c9069e6bc6704",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-research.md": {
+      "hash": "d04c982f29e42af3f71d61dd9be6a679a5a2ee5fcba6e1956bb3e2ee2b20bb84",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-review.md": {
+      "hash": "ec97d18456cead96c0ce7c6cd75c3b456f836f91ed1f2c7238955ea1e79c6114",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-status.md": {
+      "hash": "c964e340e8af5766a01751b945c72b89456dc885f990d34834920faf58d3dabe",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-ui.md": {
+      "hash": "6f7ac1f92afb9fa395c4521549c7bdc162dfafc876c6aa020ae8a4cc7dd7e41e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/workflows/sc-work.md": {
+      "hash": "cd78c508ee9b3d0075af2237a5b72db2b2781c164eda9313f2a519965c33f669",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/agentic-delivery/references/authority-and-adr.md": {
+      "hash": "2bca7520c4b11237fe99f8e53f3083f97c4bef88692876d147a4b4c103e22943",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/agentic-delivery/references/context-and-issue-pointers.md": {
+      "hash": "68c0d02211cd46b95845c2555e0d680075e61e72d3793eae3678a07d69cf8b1d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/agentic-delivery/references/open-stop-conditions.md": {
+      "hash": "09dd7d956a1372ea50668f57554110a3f3811d6948a287580aa933c0d1a378eb",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/agentic-delivery/references/qualified-references.md": {
+      "hash": "bc5f8b87bb0333347f291087ae7a28858b5326ebfd12c09094e5532f21c110eb",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/agentic-delivery/references/templates-and-outputs.md": {
+      "hash": "cec84629151a691f394f780c32997795bedb04a8650073a4ca3230d37a9e9a73",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/agentic-delivery/references/ui-contract-readiness.md": {
+      "hash": "092304b0d5f163388deeb91533a456612a95839bf027cde219db02422deb4c36",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/agentic-delivery/references/workflow-integration.md": {
+      "hash": "f87b17f9408f92302ede79f584b1a6043b4c789c22ebfaadc6f2d749f9789f2c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/agentic-delivery/SKILL.md": {
+      "hash": "a041c3e88212e646d851a03fe0ef871642a20fe98e75c2f9d01a42afd7b90eea",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/agentic-delivery/tests/progressive-disclosure-wave3.test.mjs": {
+      "hash": "11244e39b2a569f2d475d8cc7d222a143f2234ad850bccf5df19fcc4c2ff4582",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/django.md": {
+      "hash": "cec3a9a64eb824462a0e263471c70bc45232539f98dfb45ed4a797f1b622ad87",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/fastapi.md": {
+      "hash": "41d64d55b1b83a5564b6aeb3727dcbb6312c4d83e7634d2fddd290d34532734c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/go-gin.md": {
+      "hash": "606c1ee7a6e4d19979ea404d5a6c5b47d9dbf0b9db0fcae4cb7ad127fa50de80",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/http-security.md": {
+      "hash": "ae67987e0bef5255da2a15726a162ac290f4c2320f4c4083a504768c8aaa1a22",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/laravel.md": {
+      "hash": "5f2e717f9913a266834182b942a91d2a539473b386fbace69c2806af880c45c9",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/nextjs.md": {
+      "hash": "5b171a9c988cfbfec3b4a9f1fc17d7cc0e43b9b5d372b7202d1ed555d83f09df",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/nuxt.md": {
+      "hash": "e9c37a03684d95a093204a4f5c4d753a3eded9510889c3b2329e4cbff8030da4",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/presets.md": {
+      "hash": "9c55455ec414f4c8379d527bbcd39441158b2fadce3ca3501a5b9475fea8c483",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/react-native.md": {
+      "hash": "1a78a24295523e63ea2e323397ac9a2cb392a9597be167a3fe0a73bf8a75d7a5",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/react-vite.md": {
+      "hash": "83b85980fa682b063ae653168d16d7dee90baec6d7201b3e0951f16a1c31c032",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/references/sveltekit.md": {
+      "hash": "012557eee88f9aa368c8337484a752a15fefca28217114469e434561079609ad",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/SKILL.md": {
+      "hash": "349e2649b85f1c602b0267a42214a0af3dbecae0dd15cf5a95f81414d7876080",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/architecture-enforcement/tests/architecture-enforcement.test.mjs": {
+      "hash": "596381d5b1284bd8a848d1ae447b13b3d50764f1c53829e24874d83541356604",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/brainstorming/references/capture.md": {
+      "hash": "c716169a240bb4b1eddb153e38956398b3a4c4813c899a5163e4f19a9a6c033e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/brainstorming/references/grilling-MIT.txt": {
+      "hash": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/brainstorming/references/local-context.md": {
+      "hash": "4f4e589b57040e890219e10f0fb79121d84fefd8d5d4798ea08e4e7de63af545",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/brainstorming/references/questions-and-options.md": {
+      "hash": "635179013449f99a421f89628f8a426f8435aab7244695fbae9cec8f9aebb437",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/brainstorming/references/red-flags-and-next.md": {
+      "hash": "23d7b575d662f5daaddc493460bfa52449d0c29cb8608eafec339de53ad9222a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/brainstorming/references/ui-and-visual.md": {
+      "hash": "5ec57d9d3ffd0a22f7a9e0bd4c7bbaee7a1fd07e65a11bcd760b4f2ba0a68531",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/brainstorming/SKILL.md": {
+      "hash": "8de4b9f42960d3f1dbd9e52d02cac1a1bbcdb0bb4d32c779eb47785015f95eab",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/checkpoint-protocol/references/checkpoint-types.md": {
+      "hash": "4e7a683ac66ad711580ff09c78d8ebaca63d98bc7b17b74042245b7645dd519a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/checkpoint-protocol/references/resolution.md": {
+      "hash": "e598723ddac0f609159994c8d227f3e02621930b4911f26c4471eff48ef6ad83",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/checkpoint-protocol/SKILL.md": {
+      "hash": "ad4ee8f7bc8bd6c6c4bf1a61b45bb9e8be5b2ee681195d84158356e274c116e2",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/code-review/references/findings-and-self-review.md": {
+      "hash": "56c21bcf6a37d536fe899fb59f06a571ee803099fba54bb60ee75b6b7f2ddf94",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/code-review/references/quality-axes.md": {
+      "hash": "b73b3cb0b4f0b5f4d82b6d324bc4fdce875565e072318b84d77f5fd1c20715d2",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/code-review/references/spec-compliance.md": {
+      "hash": "aeefd6b7c715bf51ea726ccda2203ea9f74a182232edbee58747904371c585ba",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/code-review/SKILL.md": {
+      "hash": "868564fbb87fc6ac29f0dc40181ded5431503982ebd7890d8177041b216bfc1f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/codebase-design/SKILL.md": {
+      "hash": "329be1d44688b04d225e4d2dec01744ebd2ff768139670bffbe97a7ae6a52602",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/compatibility-check/references/audit.md": {
+      "hash": "e3304579bd43dc4b63cd72361e0150005a24a39c7da78018e799d093b63832d1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/compatibility-check/references/commands.md": {
+      "hash": "ffb4081d25994084826c5b93274b8dae5d54145e18c5e3387cf77897a01a3f24",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/compatibility-check/references/inspection-surface.md": {
+      "hash": "5b0da19c6090488af88fc81a6d7005f433d7e9102ce6f1614ac236ec009c22d1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/compatibility-check/references/preflight.md": {
+      "hash": "f7e9115fd5b0c4b064035ba40fbca2541a32e7e3c3f4cce6f7dc5a088f597ed8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/compatibility-check/references/red-flags.md": {
+      "hash": "89052331f598b5ecb63ef678f93f45e8ee9a996a81188b2df02af5b9fa375d81",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/compatibility-check/references/reporting.md": {
+      "hash": "5ab4f5ca1746fb16b871c728f34e3284d4be5990b02137a8fab406cd0689130a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/compatibility-check/SKILL.md": {
+      "hash": "eae9324701816bec9ac0d6fec0fc4c48606bdf571d8f011073b6fbf465aaaaea",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context-engineering/references/active-context.md": {
+      "hash": "171a73b358c5ec4be7631103d14c734871671e5f24fbe6f1fa9b16a6b396fd95",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context-engineering/references/phase-boundaries.md": {
+      "hash": "9d9aa04ad9e124baba9ffdcfae17ee2331099d562811ec814024e76dd8abb34e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context-engineering/references/read-depth.md": {
+      "hash": "20ab74d12a56fd0c41ca407ba6b369c43e8f6f00ca5841e4eea667e1899f5fcf",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context-engineering/SKILL.md": {
+      "hash": "050ce0197e4b354ebb10bf58fe2a165d2236539950786f647523b0464bc66114",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context7-docs/references/examples.md": {
+      "hash": "4d4bcd900a132c48baa814dd3ed3fd00ff36e518c501f14a659f9d8b1ab94e13",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context7-docs/references/exclusions.md": {
+      "hash": "99d40e6cdafa14dae8454ce9cf372171890f30cb1096e1dbccdac2ec8145d32f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context7-docs/references/fallback.md": {
+      "hash": "d6f65be204a39fc3cba81ce4db97131857cd449ad4733ee93bfa3523e2ee3480",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context7-docs/references/usage-pattern.md": {
+      "hash": "3c7fc48689316a2fd3927e245e9788f500124e6211f70674c5ba5ed55745e34f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context7-docs/references/when-to-use.md": {
+      "hash": "8f3679e93cf0b19203328aee2f3303f32361560c3b24c41d0da1ce09a5aaf797",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/context7-docs/SKILL.md": {
+      "hash": "de1abf5112c8da7c42074a1d3c4233999d4e6f78798e859959cba4bf88e87bd8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/data-privacy/references/dpia-template.md": {
+      "hash": "de1cbd13a824bf1b125e8cc9402ad0dc6af29533b3263e51107d2aa50f863c67",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/data-privacy/references/implementation-patterns.md": {
+      "hash": "ffb11e436148f04e6f5df20037dd9ff247139b46f05a0d8d6327185852722657",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/data-privacy/references/privacy-by-design.md": {
+      "hash": "9d4f0f7852056be3b7a1decdc1578ff272fc23d7f5569e75ff4c29d06355fd8f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/data-privacy/references/red-flags.md": {
+      "hash": "28b4d6574d0c57d7e5d1661a51043138b5dac6957d70f1ffc3e39937fe9a22c8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/data-privacy/references/regulatory-reference.md": {
+      "hash": "b4ca468b5df1b0093827f3098815b0957e1a462d41496a5f0e8def166ac74c2f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/data-privacy/references/review-checklists.md": {
+      "hash": "8d7ae22cae84dc613fe386eac92f445c45a7eb6b7c74ae4136ad73937f524974",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/data-privacy/SKILL.md": {
+      "hash": "ffcbcfe131951db0bce2d3ffc0bd39a1d0431b72b3ef4adff24ad7ad23afcd8a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/domain-modeling/SKILL.md": {
+      "hash": "8659df58238a0d9f7263528a66f8c517c74824da9e275c493c0d423bf550cdde",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/eval-harness/references/eval-design.md": {
+      "hash": "6864fcf3e98deb38ec98afcd1068cc8b41def181c7c06f2c238ac92853be2933",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/eval-harness/references/paired-experiments.md": {
+      "hash": "4c54811b0e9bb501615b3b7ac35b22a66544d451fb871f8da12ebb790789054f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/eval-harness/references/templates-and-reporting.md": {
+      "hash": "d2c4392d0fe1ab7116d23e968eebcac5f0f7cfd750691960c9b81d28c0b41868",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/eval-harness/SKILL.md": {
+      "hash": "26d38d69ca996da1188bd0b85be74c04d9f5fde764ac0722e8484fb44cfd96c8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/executing-plans/references/authority-and-workspace.md": {
+      "hash": "17c2d049ce7e88bc9fd0663df2df4f7598e94c92f2b52abc7db3278294b3a7c1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/executing-plans/references/execution-and-verification.md": {
+      "hash": "54452832994d527c23dbcb1d3eb1ab9700ee1c3c75620a608f4373266e1247c5",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/executing-plans/references/parallel-revision-and-handoff.md": {
+      "hash": "f850516e74728e65d3f9cdb81d84efed6819e870f9c4fbeb98dc6fe04f69b450",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/executing-plans/SKILL.md": {
+      "hash": "c4bd5d61f32c91046379903a37f85f4ddf114d1f02a53f3c879c4852162a4be2",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/gap-closure/references/execute-and-reverify.md": {
+      "hash": "a80de1301422cde81b2d44a281e7d8dcebfd67bb787883560e5a05e22a0be7dd",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/gap-closure/references/gap-analysis-and-plan.md": {
+      "hash": "c4306e8ed46f85acdb5e027d6cec3c1991398b391e89e10e4be3c3e96e345134",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/gap-closure/SKILL.md": {
+      "hash": "e48761fedf764c99696f8749fabe30091dffcf3f43ddd50ba2ebe7b32e4e15a7",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/git-workflow-operation/references/commands-and-branches.md": {
+      "hash": "07eca489b0ead058109149674b57ee558fde767bd78856e7b0d6ef95c85901d9",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/git-workflow-operation/references/configuration-and-safety.md": {
+      "hash": "8c4580293a98ff4c746d864848ab036cfb9181cc8f477bedf8fa971a67457b4e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/git-workflow-operation/references/touchpoints-and-red-flags.md": {
+      "hash": "403ef44895b70d61776c3e012075033254ecc32d36cd70f6a98da074fc447150",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/git-workflow-operation/SKILL.md": {
+      "hash": "5d67ec098f0e77940284f266320c31c9527b83811b24184576acd7f686953ddb",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/integration-checking/SKILL.md": {
+      "hash": "92cc617e263bd660fae2b38846e20c33d2444020b17cec6211660303150ee175",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/app-interface.csv": {
+      "hash": "2a17ef810dab715ce1f339861817a8fbe3ccc38142b70517301e874803e838ac",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/charts.csv": {
+      "hash": "a70ef7460b0eaaea8614f86a0d09a4bc38b467804179762464b5ca45b491baac",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/colors.csv": {
+      "hash": "cb26759805217edaaa31b09836aec09eab0fe245c58f5884e9a16ef802c6e26a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/google-fonts.csv": {
+      "hash": "3fd2898fb0fdd31ba758bf05cfcd2b58cd0f038a20cf08e417d09e5a8a4a509e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/icons.csv": {
+      "hash": "f376c29fb4df37b4bdb366a5aa70cb211ba3dd8b435390aaa03152a64b07d2e8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/landing.csv": {
+      "hash": "121a2cac7cf21050234b5f80e7b4e182f10123536032e0f9ad862ad3aec9677d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/motion.csv": {
+      "hash": "6452fbd8028ab71d52993775340e1bc40a150d92be8d4b4cb8710620fd1a7512",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/products.csv": {
+      "hash": "ac14a85ca548db25e7f144a113f2c110f0d5ba227fada9321e17476f082fc1e6",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/react-performance.csv": {
+      "hash": "904c8afcda229629545912dde0e8ac37503757131f0169f80b016f1f58c4fd3f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/angular.csv": {
+      "hash": "46c5be30f9dfb14518f8b5f9622abb86f1a130ae757c2e5297e00d158f22f63a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/astro.csv": {
+      "hash": "3d0deda7dd0ec41fe03da7dfc0a6756f677e3b34438a6b179b249f2f49af822f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/avalonia.csv": {
+      "hash": "6bfa40ec6609fcb59e52a38281edcc3a3e5b5e56341304fe5628b32cb9b1f875",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/flutter.csv": {
+      "hash": "fe36d404c799781e8ba6e9a8179b45799ed5126a545528550cd2eb0f2346e8c5",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/html-tailwind.csv": {
+      "hash": "7aef38e75c53559470afcfa91580a9917ca8b7dbf8b92110389e23e93703ac52",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/javafx.csv": {
+      "hash": "69d3adb56ad8124ae0bbf274a63a319b1625d85b8343480db6df7d672743e721",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/jetpack-compose.csv": {
+      "hash": "6c8fd4b0391c342c12b0af15610cd5becbeccaef0bbe8dcfc01d928c3195d93e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/laravel.csv": {
+      "hash": "14d744cbce74d8cdc34d533bd044e0e402a92ba49d3b4b254a44656ff111d0b9",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/nextjs.csv": {
+      "hash": "e828ccc04843742f52f545a068e8a9ab0d2b97c0e771f7e93bf0cef74da05554",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/nuxt-ui.csv": {
+      "hash": "05d6e74501b2b6a636faed32450622759f49a5bcafad971f5f4e7eba0eb7be71",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/nuxtjs.csv": {
+      "hash": "f7a3f2d9542856d00199f85c6c023b7c284cc698e2e6e12d61afce2edacb24d6",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/react-native.csv": {
+      "hash": "077aefc81d194895ecf7936b3ed298b978e36961f183e3a275f8acda19b5f621",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/react.csv": {
+      "hash": "e5624ab41d33427d88e41d07581ce4eca59b37b36ab72a6ad43a9c8e2d0a1c72",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/shadcn.csv": {
+      "hash": "395c2e415ef6f48a474acccdc8eb2c7258a6ed751a5037ba171a2d8823e02ded",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/svelte.csv": {
+      "hash": "71af52d64f266c88070b91dbbaa900c2f8074b6baae9f35eaea6ba9cec6fd803",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/swiftui.csv": {
+      "hash": "c9c2d2510f8e66281a2514e8dd0125a6b653b9ef53a71281b5e7dfe003d5b569",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/threejs.csv": {
+      "hash": "f1c05f8f269fc4784170c837f4ff43b50042f00bbd6ba7dbef2896081a052544",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/uno.csv": {
+      "hash": "5d2e0f396bb9dc5a2661204264cc0eda7cc4fa3d78152dec89d668704a41b8fc",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/uwp.csv": {
+      "hash": "debf669928871261ced9333788d5afd5784377ea1fa1b4f53993dd8f1574c0fc",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/vue.csv": {
+      "hash": "c2724915d3c11cd67263f25896cff721f787a0fdd8326002d31e9f5806dfd8f8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/winui.csv": {
+      "hash": "2d970b08e44509d7afa53ce7feb446930b2d5e0667fa637df9aeeed65c42bbbe",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/stacks/wpf.csv": {
+      "hash": "ca78b5f28dc50d66900548d602d74856400097284c73e076fcfbb5a38ae5083c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/styles.csv": {
+      "hash": "5b9c8b2309ce5ae81476a4cc08fbf3af02c6e271862238107e2172ba0a25299f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/typography.csv": {
+      "hash": "1f5f6a116b16f8d9eb675ae7a41486a246b768b3864a86cc6411816a851a438a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/ui-reasoning.csv": {
+      "hash": "06e4369445388ba9b7a57347510b125b7a2145bbf8546a327ba50292503b204a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/ux-guidelines.csv": {
+      "hash": "e01943c433b2cad3040f19389b3b0455673758a569b7a927b5bedf65c989cb96",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/data/web-interface.csv": {
+      "hash": "20aa14dbe19d06b021d399e5314152ec88621fc8189ddc996b1b791d38f2d9c2",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/references/catalog.md": {
+      "hash": "a3fd67ddc0d9ea57345e0e6f2f13dcc41d2653e7a33c0e19903262b43b97fa36",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/references/implementation-and-checklist.md": {
+      "hash": "fc26e206fb980a9e923be8fc08e1ae645ce8575e16b2f8369d557346012f091a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/references/refresh-and-cache.md": {
+      "hash": "2a458920e9318b8e32d006840ef105ee5e31ea84a313878aa7554d94c7f58327",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/references/retrieval-workflow.md": {
+      "hash": "6d73c5506b0fe0f2aa71c1e2a0d42d61deef920b8ca42b2c5365b1b84b6c0c52",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/benchmark_search.py": {
+      "hash": "365e6004a7b65a83ce612b0f5269bd3d4ed9d65b9e85a098ce8ae394cab7e201",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/core.py": {
+      "hash": "7c710d8c7e1d480511b52f677eebd439c26a191f7706e63a5c131bb29544ead1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/design_system.py": {
+      "hash": "cfea55b17c408efba188772c24ea8861caff9a21033017513d0453b529233da8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/search.py": {
+      "hash": "ab83b35576ebe728c1287650754b6b3653f8620c7bff880756d9dcbdc1101820",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/test_csv_integrity.py": {
+      "hash": "505b4223525034a2ef3d451883275ad335c4da68401c6c358e358c03f9f39d96",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/test_design_system_efficiency.py": {
+      "hash": "f1dcaa0ab9735e152e215f0fdeca117434641112a7fc1bb676f670d114b0c32a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/test_design_system_security.py": {
+      "hash": "cf58587b22a9eccd9d6545b43cb247d2bf15f752a8a7f1ecabae8a7bbf96f4d9",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/test_search_cli.py": {
+      "hash": "4226cccd8311bcadf5291af363efa0c91d9898deb10330e7a756cfa02a1238c7",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/test_search_regressions.py": {
+      "hash": "640df260647000b96b88404aadaf11f6e6b75ed9a305c39743caf6518e1229e4",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/scripts/test_upstream_provenance.py": {
+      "hash": "82e1fdc8711056bade4c48ad61f1794b9bbdbaf7c29c4fc85bffa11268537140",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/SKILL.md": {
+      "hash": "ff3bc28e1478b754341c9baa42b841645b45a2648de5f34db953ef0d3c1ed4e8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/interface-design/UPSTREAM.json": {
+      "hash": "be5e7843fdac0a332de5f474572bfcd4e4944eabd2ca4e28b4ae26601dc0456c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/issue-workflow/references/process.md": {
+      "hash": "8d17a3a7fe0b47e9e98b38eb5d3783888d02327c040d6dee82cf7ef8d81eb617",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/issue-workflow/references/status-and-done.md": {
+      "hash": "6a13d0ab2b0bf3e6fcacadbab6c622eedea4809002c27e93116d49ffbac8c4a4",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/issue-workflow/references/zero-context.md": {
+      "hash": "60efe561a41dcf40ffe1f9fe88f94b64aebad51fb2ac7dd5b50d6b54a15007e7",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/issue-workflow/SKILL.md": {
+      "hash": "ed3f36c94d66385d211be34eb37df11f8b0a013616fb2145714a3bfde3fe7263",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/knowledge-compounding/references/deterministic-loop.md": {
+      "hash": "7413ffd0526d9e1afd543259fb3c89e4414d97ba699123ccb621cefd161e6edb",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/knowledge-compounding/references/memory-capture.md": {
+      "hash": "02fcaf00678042886f39dec80e84b2162687606e9ea38367f8db9a8e40a347ed",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/knowledge-compounding/references/prevention-checks.md": {
+      "hash": "0e09e188f9e090d6c0ca368f5c1bad742a1feca7161472cd3efed908c158e275",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/knowledge-compounding/references/progress-memory.md": {
+      "hash": "cfe42914f86737aa19f7d846169fe812339bc6b78c0d63be81bc43b772b93f74",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/knowledge-compounding/references/solution-capture.md": {
+      "hash": "add6ddb6509a1017989e1c890903d84d02b1fd83cc07e380c8bddec6bc0ef9bf",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/knowledge-compounding/SKILL.md": {
+      "hash": "eed03fa6e370986a82dbe1b1f7cd8f403839e7a834bba30e9b51ea95f35213d9",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/knowledge-refresh/SKILL.md": {
+      "hash": "2075ca0f8c916fdfbe6872208de281ff0d20f74a783ca6a2bd411038cd4455ff",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/parallel-execution/references/prerequisites-and-selection.md": {
+      "hash": "8a7e33dff083bebe087052ff3db563c7b005ac3aa9aa9ef01abc2581eaa585a9",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/parallel-execution/references/process.md": {
+      "hash": "d357242fd34d22eeb5a2f61ad5db751b8c0ea691597599dc8e431e76b64ad2bc",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/parallel-execution/references/red-flags.md": {
+      "hash": "ecad3bab78490c5196d0f4b58eb8f789eabd6873e95de08938dd3c2fcecce7af",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/parallel-execution/SKILL.md": {
+      "hash": "680afdb51854ddb17b9f1c92250b1919f92922b852919afa5ce2013c80d31fde",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/plan-verification/references/coverage-and-dependencies.md": {
+      "hash": "16bea51fefafeca4ba4d4e4186e7cf7f52105f33fe7deb22f4e6394115fd4347",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/plan-verification/references/links-scope-and-must-haves.md": {
+      "hash": "d73c1b53afe2bab7a3b5bd8221b3ef62f1705490eb18abba300d6f1218157b7d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/plan-verification/references/revision-rules.md": {
+      "hash": "541a5a8061f13aeeb69156486bd4f63d7b48766c30a69c1f99824f7ece66c97a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/plan-verification/references/sizing.md": {
+      "hash": "449d2058678489910fbd8d56e839bcd132db1025927ad267f94c2b52d559edb0",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/plan-verification/references/tests-and-decisions.md": {
+      "hash": "67d42a7fe47a0ce7627c095591efb18fba30d1cf29ea9763df95319d19c30149",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/plan-verification/references/verification-process.md": {
+      "hash": "317e90c15c0fc29310ea86ec13425cc098c60eab6cda7a970913a02421362019",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/plan-verification/SKILL.md": {
+      "hash": "16a89118bb9eaff526f76ca79da5ca4e1987f3f0824aee0b8206d45ec496b69a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/prd-generator/references/ai-context-and-output.md": {
+      "hash": "5ee3011c3b4d3ae50d92c8cba4d4c29b9f459c45660c5265f3ae1e031220fe9c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/prd-generator/references/prd-authoring.md": {
+      "hash": "ab63ac30d0d01880d919eb8f4776db0468205892d07af9e1ff0ca0850bac728a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/prd-generator/references/validation-and-handoff.md": {
+      "hash": "b5d5cde8640d4c1b4e0eaf0355b6b656061dc7a3fd79db8d531a56b1b39e4743",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/prd-generator/SKILL.md": {
+      "hash": "c83370aafdaeaff338e306267b7d445fd25675bff60c35bd4ccddec3fae62fde",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/prototyping/SKILL.md": {
+      "hash": "6aee0a072ac9fc28584bf9690265f65064ac7e4da403f964132ed5bfdde1de52",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/secure-code-patterns/references/cryptography.md": {
+      "hash": "b828876eae60a2c548c7730af149fdd2dae5977a8556ca41a8fa2de7a96af240",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/secure-code-patterns/references/decision-tree.md": {
+      "hash": "92a78a3781317a4efc4809313456c8421185e15b213068d0a7d9618d71ea649f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/secure-code-patterns/references/input-validation.md": {
+      "hash": "8ce9db41057b24acc0e9656a139c4ab8955182130d14db189b0ac8e5703fff5e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/secure-code-patterns/references/red-flags.md": {
+      "hash": "5503e5c4bd902a94ca74059f815e08d5fc615d65992c9cb3d9cda37413c18428",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/secure-code-patterns/SKILL.md": {
+      "hash": "a920b5255cdadad2da543b5506e1d990f612e8f64f03bf1cb58e09fd73724f79",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/security-audit/references/agent-surface.md": {
+      "hash": "ce7c233651c026dd36e4ba488eec19c95a117b1c8828de563fa7f8cdbddd9877",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/security-audit/references/owasp.md": {
+      "hash": "179da9dc1d6adffa09ce4882e876b00821d66d8e3bf43d603f0ae7581d620647",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/security-audit/references/reporting.md": {
+      "hash": "786739b9d3c25f066fa4c806b5c0dc7ca3e6dbe87f036e9a96c9ae9ab4cd865c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/security-audit/references/secrets.md": {
+      "hash": "3d60df1bf26c6c69976e1958f76e31e42aac3e8b6f6123c7181d6b057a42a829",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/security-audit/references/supply-chain.md": {
+      "hash": "d15ac415a557856a0e4c5da305bdd77edffb7440461c96852edca0c1e83b30c8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/security-audit/SKILL.md": {
+      "hash": "f7be85c4e4cd66839d135db5389b7950e68a1f040c47225538ba7a71fa34b45d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/security-audit/tests/risk-skills-progressive-disclosure.test.mjs": {
+      "hash": "2b50ea90f3ad5f7d143568321bc00959f85bcb1fcc99081279589d7f4bda086f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/skill-authoring/references/pressure-testing.md": {
+      "hash": "7b8cd7d148708bb0b96f501843f537dd6df951d67bd9d96da83cbcd2d61cb5e9",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/skill-authoring/references/structure-and-quality.md": {
+      "hash": "3636184a535c07d81c8b90220ecc0ed80383c5121ed61f5a4fee78f1c435dac1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/skill-authoring/SKILL.md": {
+      "hash": "e8fb2cd1c793a7f914749b21c10515ec227e5d2f83ae86eae2041619dca4ef72",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/skill-authoring/test-progressive-routers.mjs": {
+      "hash": "2cf3a4af1a045cd128b78040bf97cc5fd1d625a3535aa657a8fabf3f6b21397a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/state-management/references/checkpoint-protocol.md": {
+      "hash": "e974f9274626185cb8e504c5d50e4e044a5fef94d98d041615920ae092cbb697",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/state-management/references/file-contracts.md": {
+      "hash": "7bcf456bf4b304a4395f5acaeb61dba9c3ba83cd51a0e74807bb5f6998bf6518",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/state-management/references/memory-hygiene.md": {
+      "hash": "744d70c8f609076a500dafba4748f165f2267910e93ce1267dd0402cee7083aa",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/state-management/SKILL.md": {
+      "hash": "fc1323b4188677e13d3a5fbb3a0af42b7b17341f4be43a2734e8d94f9c2a9fb9",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/subagent-orchestration/references/bounded-payloads.md": {
+      "hash": "406808716e448fc5a34cf7cf9bae0db57dfefeb8bba74a96a3b79ed46e9f662f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/subagent-orchestration/references/completion-inbox.md": {
+      "hash": "cc54d11eb7b1f1f488e9bbbd7f92894dd431c5333932c144ea1b3b1c44b49bf1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/subagent-orchestration/references/orchestration-loop.md": {
+      "hash": "8282f0c2a8bf4c7995e3fcefe65d5954a510e2d0a3c71954df2fe960dd3add0c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/subagent-orchestration/references/review-contract.md": {
+      "hash": "5538d83c87a8e316e1c08916258542a389bd36f1b95212eabc6e91fae85e64d6",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/subagent-orchestration/references/ui-gates.md": {
+      "hash": "98bbbfbe8baae5303fc5e94d592ff5a5edfbecf2525a180f7c3d18bea27e6abf",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/subagent-orchestration/SKILL.md": {
+      "hash": "138d6feedce156e2becb85248794f4a75612d96ff9f014801994320a363d9a37",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/systematic-debugging/references/advanced-techniques.md": {
+      "hash": "9fedda1c15c389b478228914501109050d47ee88034dc9a45932c8ab13b194c3",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/systematic-debugging/references/fix-and-regression.md": {
+      "hash": "fbedce57a4474d7f8a713ce5c4cb4d2b4b0f977a3d620e77911b3165d6270d20",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/systematic-debugging/references/investigation-and-hypotheses.md": {
+      "hash": "8f3d4f97210df34fd204b367fac8c83bbca2054594cb312c10d51d586c4eace2",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/systematic-debugging/SKILL.md": {
+      "hash": "7612d489458c6816d312cc892f6f2b3d4ddb191de7dfeb97672f5dfe0d67f367",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/test-driven-development/references/modes-and-exceptions.md": {
+      "hash": "95719d9a13eeadf9b32c937ca2cb41152cb6fd962928e6b49846e0efca7cfc95",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/test-driven-development/references/red-green-refactor.md": {
+      "hash": "07f9a9ea93a4ea6f9f31f389d4e79b021cc0b9a12ee70616b157c35f947dd389",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/test-driven-development/references/test-design.md": {
+      "hash": "f9b9847d1b87d11b390d4916753875c9ec931970e118756b54628137dcf9c574",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/test-driven-development/SKILL.md": {
+      "hash": "952be8921da2bd410084a58babf7248b6912d07d418dd70d1d6380759c8a7732",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/threat-modeling/references/attack-trees.md": {
+      "hash": "5a4a87a383ecbe8015b7fd3744e4a7f800cbd438b15409f66771ed977b60ed2a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/threat-modeling/references/document-template.md": {
+      "hash": "0806ea7f979e80e0347e9351463d705290fa292d6cf445d9ec76ece283a6ef8e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/threat-modeling/references/process.md": {
+      "hash": "7b18d63bc86626e0b90e77d680b33ae531ae245becca0bcff67eb9298690c0a2",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/threat-modeling/references/red-flags.md": {
+      "hash": "df55923b8b78ffec29c5f17567d27faba6a0df05b2ee0bd25b2176dcde315ba0",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/threat-modeling/references/stride.md": {
+      "hash": "31d6dbbdf9f9566c449be987d8f9fe7588b68d7f68a61a5feafaa12cf27b8a68",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/threat-modeling/references/trust-boundaries.md": {
+      "hash": "24f2dd2fc77fb2a7945ca240838f4418704d17cdde9fa1020a7f5a788a2414bc",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/threat-modeling/SKILL.md": {
+      "hash": "9b6c76b390823ecf949ed4fe79e93ffc95c4693a667454288ca3dac396007506",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/todo-management/references/capture.md": {
+      "hash": "9bfbc1f13a47237a3ff24410ebb76d944e5f9d6ce9e3cd08f98c0ef26e2009b5",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/todo-management/references/cross-reference.md": {
+      "hash": "b7b7561a3a25a010e1691d7c507c5fd385db33c4f71b885479f65e60b0cdec5b",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/todo-management/references/principles-and-red-flags.md": {
+      "hash": "fdc23bd1975d6540b750fd6809b45141e15d3615177231697e4dea039b7f3fa8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/todo-management/references/quick-capture.md": {
+      "hash": "01a98a370818bc5ac722dd0642fb37e1542b50a511cb50b10eea9c0c41cb4d9d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/todo-management/references/review-and-routing.md": {
+      "hash": "6665bdf8cb47131752bfbfa920694646492db77feb018991c74eb002294eda63",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/todo-management/SKILL.md": {
+      "hash": "5a7b017b87b40b391baf1287f9697547b52d23e9e3035f320691c5806ab5cd80",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/triage-workflow/SKILL.md": {
+      "hash": "49e06c9b5abf3b06fc4963bcd2feb8dec520ea51e5e9a6d2086f14d3a79aa257",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/verification-before-completion/references/claim-evidence.md": {
+      "hash": "97c7513ee343489638046d80d7c156561afe7f8da87603f646aeedc05c66ab88",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/verification-before-completion/references/goal-backward.md": {
+      "hash": "e31fa9f4fa96f8f8a257deadd749eee9ab2cc306fd9a356577283b061158ac8f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/verification-before-completion/references/live-verification.md": {
+      "hash": "6922926d058f5b85a0f796417eb5326d0038e69ef4a2b1b4e1456eba039bca98",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/verification-before-completion/references/verification-recipes.md": {
+      "hash": "45a3262026241a845a495d7cf63dcdf8d1f37a62eed7a7851db944128924e4f6",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/verification-before-completion/SKILL.md": {
+      "hash": "f9c995a51e24a456294a9576d927e751641439d29273aeb3bde039236621df50",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/verification-before-completion/tests/test_skill_router_contract.py": {
+      "hash": "06a71426b66261692e1defb5654539861632ff4de9bf31619fd8387387125dfb",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/writing-plans/references/fsd-authoring.md": {
+      "hash": "80bb41b19345e61e0a9e596410a3f779eb6fc43cb3b30baaf815e977c8871e35",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/writing-plans/references/goal-slicing.md": {
+      "hash": "c974fca77793123705d278711b6057bb436e5dbebfeb546df2f7f3ecffab3ff5",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/skills/writing-plans/SKILL.md": {
+      "hash": "65f2d1ff82776b92e0b767028485d6d21a709f09680c950c7e6f190052ac5f5a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/agentic-delivery/ADR-Agentic-Ready-Reusable-Template-OPTIONAL.md": {
+      "hash": "bf7f5b0f9dde87d1e4db4b53f50a9296d66a3711d1c2ce37930d05eaadd19d6f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/agentic-delivery/BRD-Agentic-Ready-Reusable-Template.md": {
+      "hash": "b7da00a38cf28b00ebeeed5e6ee08ef47440be4c67cdb01b25974c94f1fe94b3",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/agentic-delivery/FSD-Agentic-AI-Ready-Template.md": {
+      "hash": "efa7ccd9f1116c6be830ecd0e4f84cdc828473942198ff2ef36710aac56fed02",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/agentic-delivery/PRD-Agentic-Ready-Reusable-Template.md": {
+      "hash": "f512edba11e963b568cdc6d4e67c8235174ed3cefc0f428bfb2dc2645e656266",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/agentic-delivery/skeletons/ADR-Skeleton-OPTIONAL.md": {
+      "hash": "f4293415b042b5c741dc0bb17de153e77688648dd4a891bce9720936f58318cf",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/agentic-delivery/skeletons/BRD-Skeleton.md": {
+      "hash": "4b440916eeb366e49d49b628764c8c2952a0a4325f128967a051ae1d7302fac4",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/agentic-delivery/skeletons/FSD-Skeleton.md": {
+      "hash": "aa11ae77ff54b8a411756c285049a56c9b173eb358e1be5427736e2f9bdf4dcf",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/agentic-delivery/skeletons/Issue-Pointer-Skeleton.md": {
+      "hash": "0e0e30553bbefeae2827533e57b03cc35da8a0416be2c9d8a7282c9b15c62c15",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/agentic-delivery/skeletons/PRD-Skeleton.md": {
+      "hash": "e01912467ff22f89fb942a7f860d57852407417bafd7cd4be68d6a73aaa604f1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/git-workflow/PULL_REQUEST_TEMPLATE.md": {
+      "hash": "eed1dc0f32d2c614562cfc56b4677dab869095fd008fc00281d292cb79dfe550",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/orchestration/Implementer-Brief-Skeleton.md": {
+      "hash": "7c5cce6b86af12baedc74a19730b7019b1c20476bca45fdb79c890e8a44e4f8e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/orchestration/Reviewer-Brief-Skeleton.md": {
+      "hash": "9c4b2ba7a5e8b668965bc6d5b1c989d34d440b1927a27e56e628a606af43743a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/research/Research-Note-Skeleton.md": {
+      "hash": "22dd8c11aed1d6780553431e58e4ace01a9c118f0e32bc79ce3296c2c12cc09b",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/state/Progress-Template.md": {
+      "hash": "b4eac1a21db5894b0c6ac890959d443512333fb54b4e6b2c22ebd7791b5dbbbd",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/templates/state/STATE-Template.md": {
+      "hash": "3da90fc133f3a44cc87c38dbcfc8bdc11e797fadc88992285a1802e03d262fbd",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/rules/quality-gates.md": {
+      "hash": "f4d755c52c3ff80c5b05d8e68036b209eef3e0fd5feb5c7cc210ca59e324cf19",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/rules/super-compound.md": {
+      "hash": "3a8523ef04e0cd45667a6d79cf389428139337ca6d73330650fceb27328c12a7",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/agents/architect.md": {
+      "hash": "524235812e3656ce1f54973976b92152dac82901e220bbf3faf610d78adff4e4",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/agents/brain.md": {
+      "hash": "1865c289a8c2224680403b92818c3a68879a3271b341e92d5a3c75f58537f5df",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/agents/build-fixer.md": {
+      "hash": "ede412808781882ba4938306fc2270246b9cdf998148977500eafaa3facdd072",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/agents/code-reviewer.md": {
+      "hash": "bac099fb9f17474689f618c47b15cbe1dc05bc73c4e8a09f1d3a88bbe73407e1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/agents/doc-updater.md": {
+      "hash": "18c87775b367faade876a3a98534e5259cfc2df61c203bc47ffb7ffd2ebe8921",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/agents/e2e-runner.md": {
+      "hash": "501ee48942747a5e5cab62c7cc0363bd2ea6098645a8e577781c2da3ef1be5e9",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/grilling-sdlc-green.json": {
+      "hash": "adfaf06cb631fe1e8182a83d6915bbd6630088b51e3964e1c0099e9159e12c8a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/grilling-sdlc-green.md": {
+      "hash": "ebdc7c120e8f980e1d5033107eb80bb67734c5bd3150bbe078a1e70fcbc11e90",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/grilling-sdlc-red.json": {
+      "hash": "430fc3912ebd8eee1ae5bbd7f0bb121bbd00b6ee366679d159b035593c7b07cc",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/grilling-sdlc-red.md": {
+      "hash": "1d608c292381361559ea4c4569c33b8246872bfcc0630850b2c976dfae64cbda",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/grilling-sdlc-refactor.json": {
+      "hash": "d167adbd32cb8b99c2b2bef049a0dd0c8b8426ccdc3a3fc260272d3ab3daf26c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/grilling-sdlc-refactor.md": {
+      "hash": "4443cc504ddc74856566ff39b277f14505109a1d72773e7257fc043d1f80dfeb",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/grilling-sdlc-scenarios.json": {
+      "hash": "01af17d4baf2ef872afadf16c7b0273abd0a5ff4c238a64526992742c0ff0af1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/knowledge-loop-acceptance.md": {
+      "hash": "e10c48c02c36c48ca6e35d697a802c5286a7204c7788feb8b3288a06c6c3d96b",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/knowledge-relevance.json": {
+      "hash": "21cc5d8f8570ab54300863fcc1a45a8cb1af461e583455c5a17c850689228018",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/pstack-enhancement.md": {
+      "hash": "8ad57a7453c37bd617da9f22f8b9d4158d49a184d917fcf7a7aefd7d5f6ca159",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/setup-sdlc-acceptance.md": {
+      "hash": "f94e20bf4816e72fdbc0609d7f3b8527b69e966ef13418d95aea5c0106c2507a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/ui-contract-readiness.log": {
+      "hash": "ed69ea7a620eab13afedfad503a60d415042720469eec4e77690a6b4aad0a38f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/evals/ui-contract-readiness.md": {
+      "hash": "0e307b1fa741082d329f158338ee323ae281936ea3fc0946d769bcf473cd5527",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/context-monitor.js": {
+      "hash": "5204cc561adeb053b184b198d608cc97fba8a3925c9b0f002c5a05329d5bafad",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/hooks.json": {
+      "hash": "63da8d32bc3cdd70b14a95c4f820d28b17eb4f51b565b9f199a174c6a987ef03",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/lib/context-pressure.js": {
+      "hash": "327939c4b98aadd9098932fff9a5837e956bb72395203422315dd2a4c4e51e51",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/lib/hook-utils.js": {
+      "hash": "cfdbe2811f44a391c04ae827bb555eca21b0490ec6a4d1ae0296b9a8fff67a09",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/pre-compact.js": {
+      "hash": "5e13b34e0f451151a94758201286e458edd65b09b33fd08e0720d0a481df9555",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/README.md": {
+      "hash": "eab5db1e7777de502f16cc719cc05d5204151bbbe1a4e338c39b2c6a734e16d4",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/session-end.js": {
+      "hash": "508d44cdf204884680b8d4dd7aedf6e96607beec18293e094b5cd026152b7212",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/stop-check.js": {
+      "hash": "100b4793dd14aead2aa48cb0e3dd1f1cd940023dcd25de482a1af0e78fe8384d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/suggest-compact.js": {
+      "hash": "547f684d1967606e1376a396320017352259566dd8832b40388af61bc56bbdb1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/hooks/test-hooks-security.js": {
+      "hash": "e641bd5a89e48afe29d9911a41f9d3d8337b148af5385250240bf60c496d0309",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/active-assets.mjs": {
+      "hash": "be6a9d18a2b0811e62931468fcd89b500a49c2e71d8bf1e8ad255dc7af902412",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/active-assets.test.mjs": {
+      "hash": "0ce911379a73ace857fdcb40909d17de083219cc2eb03f38c844de5039788a8d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/adaptive-eval.mjs": {
+      "hash": "f5328599d03881fe2f174dc8aca8e1757b43c7ccfef9e3c098de30e189d03573",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/adaptive-eval.test.mjs": {
+      "hash": "ecfdedd1911559c85ef3e577a2b94c1adeb25ecd36cde0e77dd7df627f59f66d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/agent-contracts.test.mjs": {
+      "hash": "f8a34ee85083ff683148e179c20c30687c463e51433cd0c0b7f8dea06075d177",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/agent-projection.mjs": {
+      "hash": "25023597d1ee2d86b3701ce87d799e5a33c8ffdeecd7b4406deb39defd9d1e92",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/agent-projection.test.mjs": {
+      "hash": "c6e28cd1fc9181bfaf8caf61db20de2ae204a9ca17e0a6825aa27c163ef80220",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/artifact-contracts.test.mjs": {
+      "hash": "519a82635336818e2878202ba909e992e8ad4b18fd3e2156f33725d2d098cc90",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/autonomy-policy.test.mjs": {
+      "hash": "63ed8cb40ad31efa5bba0f141ba4474fa2bf3a8ab9d868a60422e1659f76ca0a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/codex-install.test.mjs": {
+      "hash": "4ca2db88edadbf7e04311506b7c45aafd49cbde0aeccd4a73d42df0f1a1be47d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/codex-pilot.mjs": {
+      "hash": "7f1225d285f145ab254941dd423242adbb561184b2ec1c1e4d259c59f5e3e731",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/codex-pilot.test.mjs": {
+      "hash": "d321996cc87468fec63c3d74e88878671541c46b5574c0934dd8dae9a8c95d01",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/command-surface.test.mjs": {
+      "hash": "940f0ee7a0d061f5a5fda21f8962b91abcff29d325ed97cecdd5515d35820bed",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/completion-receipts.test.mjs": {
+      "hash": "7b152d947a32b6937ffe19e550f4b5fe2abc5a645825f23f8609cd02a652bf8d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/doc-lint.mjs": {
+      "hash": "627e70dfa336dc4920b98c611c557e027a40f638b3ea39370d2993d5c606e44d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/doc-lint.test.mjs": {
+      "hash": "e4f5a4125ec8305923c81f278a86a03652979ab745f27483f7fee2cf186ce528",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/documentation-quality.test.mjs": {
+      "hash": "2a73d373d2b4cfaf864ca4550a4e4d5b0fe125729dde700554cf4f7dcabf74d5",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/evidence-matrix.mjs": {
+      "hash": "5bbfcb1b254e4e61e97a34465d69ec544641d493a5bbb8837b7479ba669eccd1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/evidence-matrix.test.mjs": {
+      "hash": "8492b36f9902e9c8950638b372ba4dbdd8d22c2740ea79d162968c1be6530b7a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/file-state.mjs": {
+      "hash": "b9bb4883e1670b51261ed1922dadd89f1ec9c1e949a90719bd24d0f7c3414c95",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/file-state.test.mjs": {
+      "hash": "f8d0ea8a8a5b33d380f23d81a183ec67fd7b1c4e94316301f9b84376673496c5",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/framework-audit.mjs": {
+      "hash": "fe206ae65c50111d98ae51c795d26394d5515304daee427d6d8e1872dbd24c8e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/framework-audit.test.mjs": {
+      "hash": "cea85d5e56647c660392f3ade5685bc54134df921d25b2b50b734df54b8d70ad",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/git-workflow.mjs": {
+      "hash": "378a59f32fe7fd781e5d8e95d3f4206ad7f95e8e19d92097e4469e7bcc693dc7",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/git-workflow.test.mjs": {
+      "hash": "86e8fed1fbfdf003fd1fdeb0c093b22bc276cdffe5ed6a82ebcad334dfaa73db",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/goal-waves.mjs": {
+      "hash": "7cbc0470f4972f3e4e3c15799f4a134fa33f7c6a6cb4f62c5f794c3f460adee8",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/goal-waves.test.mjs": {
+      "hash": "8137126dc08ba7ef5ff4e95d53fbd4ec7940f7deb60b545f99084cc10b4a1c39",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/grilling-sdlc-contracts.test.mjs": {
+      "hash": "d73e99343d33f95912a0cda70e256b81ea01eec2d5dc5cfad0284d5dae11e007",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/hook-env-surface.test.mjs": {
+      "hash": "5ba7c830cbed17f86c0dfbc977db9c9b326a1d6a40e6fe808df4a16bcafd54ab",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/instruction-context.mjs": {
+      "hash": "1799041024bbd300057459d6868ee62f89e43943f4f765b3e6693750793bac93",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/instruction-context.test.mjs": {
+      "hash": "280637e3ed3a2fc943c287c0a81f1adb2631b8f3ee176cde62b9397b15e49d69",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/knowledge-search.mjs": {
+      "hash": "694f4270b6f27bb2832c64948a959f3a529160be38c0642f69e738fa6db25390",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/knowledge-search.test.mjs": {
+      "hash": "b55827e377deefc2703bed78fcdfe8b61cc96e8fc3adf19858855d8d2ea10f81",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/maintenance-recovery.test.mjs": {
+      "hash": "c5a8631c3979ea2cd108a464161ab8b8157844da88ef3dded3282c5c947072a2",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/memory-maintenance.mjs": {
+      "hash": "7396e34d42c1e8b0ec9fdb11d245cbd473f411f18b30b8c984bd0bd033727bba",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/memory-maintenance.test.mjs": {
+      "hash": "016d6efcc28b05caf0cf2f5474b7f9ac80f48e0080d9b4d93d37479d2027d95f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/paired-eval.test.mjs": {
+      "hash": "289ec019fdc01d906d0d061cf55d90d5e850282d31c4b4da8fca225d4ba42a66",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/prevention-checks.mjs": {
+      "hash": "e05062b09633bddda074b863d945d3f3d0424f7384940a2b4c04ef91a5c2135d",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/prevention-checks.test.mjs": {
+      "hash": "7739a10dc21154783316933f87cf7f3100a8bb489d8ae8044ca0bfd7faab8703",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/readiness-gate.mjs": {
+      "hash": "0f6972f2a73df3a6ad4328da37de85a448d71a0e5e34ac4125bac89d79058d55",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/readiness-gate.test.mjs": {
+      "hash": "cc0226dc8b09b82bd7a54808b03d458b3bb62e8b1b2f291a6ec06cdae4935ffe",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/run-local-tests.mjs": {
+      "hash": "7a8bb344512ad8bef056d3c1d20e6871876406bb9620ec13c5040d31e7040b7f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/session-baseline.mjs": {
+      "hash": "5969bb7d2b651b7cff94c9b5c6fe9d554f35aa284f67a5c7e5b07fb7d9ecda69",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/session-baseline.test.mjs": {
+      "hash": "e00ae33787e30e4eb36328ff0d4962fa83dc846c49a65ff4584e3211a52ff85c",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/setup.mjs": {
+      "hash": "e16d823e1868ebebd362393c26cf3540a7039d706fe02dc1855eb45f098240cf",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/setup.test.mjs": {
+      "hash": "c75d1120c6e3e5501534e8138c7c4ec2658a68995ff8fbbfcaadf43b171e888b",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/token-benchmark.mjs": {
+      "hash": "d26ad7c1ceb650aaaf800234105abb8219c150fe61ddb2ac3ee719216664656e",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/token-benchmark.test.mjs": {
+      "hash": "bac21705db36a13cb20ce1d10408e4568f1c193ef908b0de246a86b166954cad",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/transcript-usage.mjs": {
+      "hash": "bba4eb9098e21500cdfa156248f45e41417ffd2cab61bd3ec84451c8cd4cbc18",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/transcript-usage.test.mjs": {
+      "hash": "4126137dcf93a28f39fbcfb3b33c5aeba72d4f96813b87ea60942e561da3f4d3",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/validate-doc-claims.mjs": {
+      "hash": "d91af58586fc8c03e76f66e94b4e8aadad06dd147365e0585d117b10a2268298",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/validate-doc-claims.test.mjs": {
+      "hash": "7d8b6f843d8c22883b2a477224a7b5a8bd014afb57b8078014130cf699a8b672",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/verification-recipe.mjs": {
+      "hash": "a37b98dc3cdfe27d3cf6f2f8b65f34361071902ec360dd8d89e061a5362054f4",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/verification-recipe.test.mjs": {
+      "hash": "fbbdd9f3e4e6bb88ecb157fe338cb839bd5947f8677336141c9723ec387a749a",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/verified-promise.mjs": {
+      "hash": "ae4165a3eba26015ae97f29c0e314cd1ed8969046d75266cd0cf73d44e962bc1",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/verified-promise.test.mjs": {
+      "hash": "21765079639910c2ccbfb847893714f0c12e5292ed0ea63a1271aa85202a36e6",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/work-package.mjs": {
+      "hash": "b78fac1907db155817e4949f467d9e179411f38a3f44a8312ab1d1ecfc05cd30",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/work-package.test.mjs": {
+      "hash": "25d10b2519c6030832c890299bd4bc93631f00e20bed4d999533a4498508efcd",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agent/tools/workflow-contracts.test.mjs": {
+      "hash": "641606226a687ac0e0c1559ea66b300baa3a90a59389f773144eb75227433aca",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    ".agents/skills/super-compound/SKILL.md": {
+      "hash": "fd2502ab41045b636d06e12efbea7f7e2b005042ab85ea68a93768062b55ef6f",
+      "mode": "owned",
+      "owner": "super-compound"
+    },
+    "AGENTS.md": {
+      "hash": "f73c224b3b7c7080faae1d39ac649a50964b5b5d16f95821ed2c9d563d3e2296",
+      "mode": "block",
+      "owner": "super-compound"
+    }
+  }
+}

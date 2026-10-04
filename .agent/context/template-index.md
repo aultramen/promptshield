@@ -1,0 +1,33 @@
+# Super Compound Template Index
+
+Use skeletons first. Load full templates only for the specific section being authored, reviewed, or repaired.
+
+## Full Templates
+
+| Artifact | Full template | Skeleton |
+|---|---|---|
+| BRD | `.agent/templates/agentic-delivery/BRD-Agentic-Ready-Reusable-Template.md` | `skeletons/BRD-Skeleton.md` |
+| PRD | `.agent/templates/agentic-delivery/PRD-Agentic-Ready-Reusable-Template.md` | `skeletons/PRD-Skeleton.md` |
+| FSD | `.agent/templates/agentic-delivery/FSD-Agentic-AI-Ready-Template.md` | `skeletons/FSD-Skeleton.md` |
+| ADR | `.agent/templates/agentic-delivery/ADR-Agentic-Ready-Reusable-Template-OPTIONAL.md` | `skeletons/ADR-Skeleton-OPTIONAL.md` |
+| Issue pointer | `agentic-delivery` / `issue-workflow` | `skeletons/Issue-Pointer-Skeleton.md` |
+| Implementer brief | `subagent-orchestration` step 2 | `.agent/templates/orchestration/Implementer-Brief-Skeleton.md` |
+| Reviewer brief | `subagent-orchestration` step 5 | `.agent/templates/orchestration/Reviewer-Brief-Skeleton.md` |
+| Pull Request | `.agent/templates/git-workflow/PULL_REQUEST_TEMPLATE.md` | n/a |
+| Research note | n/a | `.agent/templates/research/Research-Note-Skeleton.md` |
+| Project state | `.agent/templates/state/STATE-Template.md` | n/a |
+| Progress log | `.agent/templates/state/Progress-Template.md` | n/a |
+
+## Section-On-Demand Rules
+
+- Start from the skeleton and qualified refs.
+- Expand only the section needed for the artifact under active edit.
+- Keep `OPEN-*` records for unresolved decisions.
+- Keep BRD business, PRD product, FSD technical, and ADR decision authority separate.
+- UI experience stays in PRD; Screen/Interaction mappings stay in FSD Section 8;
+  exact delegated wire shape stays in the linked machine contract.
+- Keep research notes advisory; translate accepted conclusions into the artifact that owns the decision.
+- Goal issue files must point to IDs and paths; do not copy BRD/PRD/FSD/ADR paragraphs.
+- UI issue pointers add only versioned contract refs and required gate.
+- Pull Request text uses the Git workflow template after local verification and push.
+- Filled artifacts follow `.agent/context/output-style.md`: summary first, relevant HLD, preserved evidence and parser fields.

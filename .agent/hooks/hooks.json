@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PROJECT_DIR}/.agent/hooks/suggest-compact.js"],
+            "timeout": 5
+          }
+        ],
+        "description": "Suggest compaction from transcript pressure with session-scoped tool-count fallback"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PROJECT_DIR}/.agent/hooks/context-monitor.js"],
+            "timeout": 5
+          }
+        ],
+        "description": "Warn the agent at low remaining context: 35%/25% remaining on a 200k window, 15%/8% on 1M; override with SC_CONTEXT_WARN_PCT and SC_CONTEXT_CRITICAL_PCT"
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PROJECT_DIR}/.agent/hooks/pre-compact.js"]
+          }
+        ],
+        "description": "Save STATE.md snapshot before context compaction"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PROJECT_DIR}/.agent/hooks/session-end.js"]
+          }
+        ],
+        "description": "Report durable-state presence and suggest knowledge compounding"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PROJECT_DIR}/.agent/hooks/stop-check.js"],
+            "timeout": 5
+          }
+        ],
+        "description": "Inspect the bounded final assistant message for debug or sensitive-looking output"
+      }
+    ]
+  }
+}

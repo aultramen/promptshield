@@ -1,0 +1,51 @@
+---
+name: issue-workflow
+description: "Use when /sc-plan needs FSD GOAL-* packets turned into lightweight issue pointers, local Markdown Kanban boards, blocker DAGs, or multi-agent task contracts."
+---
+
+# Issue Workflow
+
+## Summary
+
+Apply this procedure within its authorized scope and use `.agent/context/output-style.md` for every documentation file created or updated: summary first, relevant HLD, preserved evidence and parser fields.
+
+## Purpose
+
+Turn approved FSD `GOAL-*` packets into local Markdown issue pointers that agents can execute independently without copying upstream prose.
+
+Announce: "I'm using the issue-workflow skill to create lightweight goal issue pointers."
+
+The default board is `.scratch/<feature-slug>/issues/*.md`; an optional `.scratch/<feature-slug>/FSD.md` is only a short pointer to the approved FSD. Use this from `/sc-plan`, not a separate public workflow.
+
+## Reference Router
+
+- Allowed pointer content and prohibited duplication: [zero-context contract](references/zero-context.md)
+- Source gathering, goal slicing, DAG construction, validation, and publishing: [process](references/process.md)
+- Status meanings and board completion checks: [status and done](references/status-and-done.md)
+
+Load the process while creating or revising a board. Load status details only when assigning or reviewing state.
+
+## Mandatory Gates
+
+- **Pointer gate:** Issue files are references, not specifications. Keep only status/goal metadata, parent FSD path, qualified refs, dependency paths, verification refs or commands, and concise stop notes. Never copy BRD, PRD, FSD, or ADR paragraphs, tables, rationale, requirements, or acceptance criteria.
+- **Authority gate:** Each issue points to one approved `FSD-<PROJECT>#GOAL-xxx` with explicit upstream, technical, ADR, scope, impact, and verification authority. Missing authority creates an `OPEN-*` blocker, not inferred behavior.
+- **Contract gate:** A UI-integrated pointer includes `ui_delivery_role`, pinned
+  `Contract refs`, and `Contract gate`. A scale-out pointer remains blocked by
+  the first-slice pointer until it reaches `verified` and proves
+  `FIRST_VERTICAL_SLICE_VERIFIED`; its PRD baseline must also be `VALIDATED`.
+  One `HARDENING` pointer depends on all applicable UI delivery slices.
+- **Sizing gate:** One issue produces one coherent, independently verifiable outcome. Foundational goals are allowed only when independently testable and necessary.
+- **DAG gate:** Every blocker path must exist or be created earlier; blockers precede dependents; cycles are forbidden; parallel candidates must not share unmerged files without an FSD integration strategy. Every ADR ref must be linked and `ACCEPTED`.
+- **Review gate:** Derive and write the board automatically from approved goals after coverage/DAG validation; notify the result. Ask only for a material scope, acceptance, or dependency decision absent from authority.
+- **Skeleton gate:** Create each pointer from `.agent/templates/agentic-delivery/skeletons/Issue-Pointer-Skeleton.md`. Do not restate the template. Populate qualified references, dependency paths, and concise goal-specific boundaries only.
+- **Fail-closed creation gate:** New pointers start `needs-info`; promote them
+  only after authority, dependency, verification, and applicable contract gates
+  pass. Recheck any pre-existing pointer against these gates before promoting it.
+- **Ready gate:** `ready-for-agent` requires no unresolved blocker and its
+  required contract gate. Missing decisions or evidence use `Status: blocked`
+  plus an `OPEN-*` record under stop conditions.
+- **Done gate:** The board must be acyclic, expose at least one unblocked issue unless intentionally blocked, link every required field, avoid duplicated prose, and allow one issue path to be handed to `/sc-work`.
+
+## Related Skills
+
+Use `agentic-delivery` for authority, `writing-plans` for FSD goals, `triage-workflow` for incoming issues, `executing-plans` for one pointer, and `context-engineering` for selective source loading.

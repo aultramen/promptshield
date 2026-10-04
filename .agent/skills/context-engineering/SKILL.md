@@ -1,0 +1,82 @@
+---
+name: context-engineering
+description: "Use when managing AI context budget, selective file loading, history digests, and fresh-session handoffs."
+---
+
+# Context Engineering
+
+## Purpose
+
+Load minimum useful context, keep durable state on disk, and recover context at natural boundaries before quality degrades.
+
+Announce: "I'm applying context engineering to keep the working context focused."
+
+## Core Rules
+
+- Load by relevance to the current task, not by directory size.
+- Prefer summaries and targeted reads before loading large files; scale depth
+  and pick the output tier at intake per [read depth](references/read-depth.md).
+- Follow imports, references, and tests only as far as needed.
+- Keep cross-session state in durable files; conversation memory is not.
+- Stop gathering context once you can safely act.
+
+## What To Load
+
+| Task | Start With | Add Only If Needed |
+|---|---|---|
+| BRD/PRD/FSD Planning | Request, BRD/PRD, prior brainstorm, README, package metadata | Similar code, accepted ADRs in `docs/solutions/`, related solutions |
+| Execution | Goal issue pointer, parent FSD refs, target files, tests, local instructions | Upstream BRD/PRD refs, linked accepted ADRs, callers, interfaces, fixtures |
+| Debugging | Error output, failing test, implicated files | Related config, recent changes |
+| Review | Diff, tests, requirements | Nearby code for behavior comparison |
+| UI work | Existing design system, components, target route | `interface-design` search results |
+
+## History Digest Pattern
+
+When returning to work:
+
+1. Read `docs/STATE.md` if present.
+2. Read `.continue-here.md` if present.
+3. Read the active BRD, PRD, FSD, goal issue pointer, or brainstorm.
+4. Load only files needed for the next step.
+5. Run `/sc-status` if the next action is unclear.
+
+## Fresh Context Signals
+
+Phase-end moves (continue/clear/handoff/subagent/compact, compact last):
+[phase boundaries](references/phase-boundaries.md).
+
+Suggest `/sc-pause` and a fresh session when:
+
+- The task is switching to a different feature or domain
+- Debugging has accumulated many failed hypotheses
+- A major feature is complete and review should start clean
+- The assistant is relying on stale memory instead of current files
+- The conversation is long enough that important details are being compressed
+
+After a fresh session, use `/sc-status` to recover from disk.
+
+## Checkpoints
+
+At phase ends, persist durable state to `docs/STATE.md`, `docs/progress.md`, or `.continue-here.md` before dropping loaded files.
+
+## Red Flags
+
+| Thought | Better Response |
+|---|---|
+| "Read the whole repo first" | Search, sample, and follow references |
+| "Keep everything in memory" | Summarize and persist durable state |
+| "Reload the whole conversation" | Use `STATE.md`, `.continue-here.md`, and current files |
+| "More context will fix uncertainty" | Name the missing fact |
+
+## Related Skills
+
+- `state-management` for durable state files
+- `agentic-delivery` for qualified references and zero-bloat rules
+- `executing-plans` for goal-by-goal loading
+- `systematic-debugging` for investigation scope
+- `brainstorming` for lightweight product context
+- `checkpoint-protocol` for pause and handoff decisions
+
+- Preserve mandatory briefs; optional background becomes pointers. `over_budget` blocks dispatch; text estimates do not prove runtime savings.
+
+- For instruction correction/resume, load [active context](references/active-context.md).
