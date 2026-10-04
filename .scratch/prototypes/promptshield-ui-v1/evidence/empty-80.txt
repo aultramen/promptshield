@@ -1,0 +1,15 @@
+PromptShield | SIMULASI OFFLINE | MOCK | integrasi belum diverifikasi
+Tidak ada tindakan tertunda. Pilih sesi lokal yang tepat.
+Sesi lokal: 22222222222222222222222222222222
+Status: EMPTY | mode: detect-first
+Detect First: tahan finding hingga pilihan sah.
+Mode request aktif: None | mode berikutnya: detect-first
+Map: empty | policy version: 1
+Required engines: regex siap, secret-scanner siap, dictionary siap, laya siap
+EMPTY: tidak ada tindakan tertunda. Pilih sesi atau mulai request baru.
+m Mode | v Verbose metadata | r Refresh | c Cancel request aktif | s Stop | q
+Keluar
+Ketik pilihan lalu Enter. Enter kosong tidak menyetujui tindakan. Ctrl+C
+membatalkan pilihan aktif.
+> q
+Reviewer ditutup. Tindakan pending mengikuti deadline.

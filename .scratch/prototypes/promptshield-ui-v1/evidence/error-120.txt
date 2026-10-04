@@ -1,0 +1,14 @@
+PromptShield | SIMULASI OFFLINE | MOCK | integrasi belum diverifikasi
+Engine wajib belum siap. Periksa instalasi lokal sebelum protected send.
+Sesi lokal: 22222222222222222222222222222222
+Status: NOT_READY | mode: detect-first
+Detect First: tahan finding hingga pilihan sah.
+Mode request aktif: None | mode berikutnya: detect-first
+Map: empty | policy version: 1
+Required engines: regex belum siap, secret-scanner belum siap, dictionary belum siap, laya belum siap
+NOT_READY: protected send diblokir. Periksa engine dan konfigurasi lokal.
+EMPTY: tidak ada tindakan tertunda. Pilih sesi atau mulai request baru.
+m Mode | v Verbose metadata | r Refresh | c Cancel request aktif | s Stop | q Keluar
+Ketik pilihan lalu Enter. Enter kosong tidak menyetujui tindakan. Ctrl+C membatalkan pilihan aktif.
+> q
+Reviewer ditutup. Tindakan pending mengikuti deadline.

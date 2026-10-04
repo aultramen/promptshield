@@ -1,0 +1,11 @@
+STREAM_INVALID: Stream tidak valid dan response belum lengkap. Periksa status
+lalu buat task baru.
+PromptShield | SIMULASI OFFLINE | MOCK | integrasi belum diverifikasi
+Simulasi stream belum lengkap.
+EMPTY: tidak ada tindakan tertunda. Pilih sesi atau mulai request baru.
+m Mode | v Verbose metadata | r Refresh | c Cancel request aktif | s Stop | q
+Keluar
+Ketik pilihan lalu Enter. Enter kosong tidak menyetujui tindakan. Ctrl+C
+membatalkan pilihan aktif.
+> q
+Reviewer ditutup. Tindakan pending mengikuti deadline.

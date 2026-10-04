@@ -1,0 +1,18 @@
+PromptShield | SIMULASI OFFLINE | MOCK | integrasi belum diverifikasi
+Reviewer terputus tidak menyetujui tindakan pending.
+Sesi lokal: 22222222222222222222222222222222
+Status: WAITING_USER | mode: detect-first
+Detect First: tahan finding hingga pilihan sah.
+Mode request aktif: None | mode berikutnya: detect-first
+Map: empty | policy version: 1
+Required engines: regex siap, secret-scanner siap, dictionary siap, laya siap
+Fokus: tindakan tertunda REQUEST_REVIEW | revisi: 1
+Kategori/jumlah: SECRETS: 1, PII: 2
+Tujuan: CONNECTIVITY_CHECK | sisa waktu: 120 detik
+1. Mask: lanjutkan dengan masking (simulasi)
+2. Edit: batalkan request lama, ubah input lalu ajukan request baru
+3. Cancel: batalkan tindakan
+m Mode | v Verbose metadata | r Refresh | c Cancel request aktif | s Stop | q Keluar
+Ketik pilihan lalu Enter. Enter kosong tidak menyetujui tindakan. Ctrl+C membatalkan pilihan aktif.
+> DISCONNECT
+Reviewer terputus. Tindakan tetap pending sampai deadline; tidak otomatis disetujui.

@@ -4,7 +4,7 @@
 
 PromptShield melindungi jalur inference Codex dengan memeriksa content sebelum keluar, memasking nilai sensitif, dan memulihkan token pada teks jawaban. MVP wajib memakai **subscription ChatGPT melalui Codex**. Tool call yang membutuhkan nilai asli ditahan; user dapat melakukan tindakan manual, memakai panduan variable lokal seperti `.env`, atau membatalkannya. Pemulihan otomatis pada tool arguments dan controlled tool restoration berada di luar MVP.
 
-PRD ini menetapkan pengalaman user, requirement observable, acceptance criteria, kondisi gagal, dan release gates. BRD disetujui user pada 2026-10-04 dengan DEC-001/DEC-002. PRD disetujui melalui `$sc-ui Approved PRD`; arah baseline UI disetujui melalui `$sc-pan Approved Baseline UI`, ditafsirkan sebagai `/sc-plan`. Subscription integration dan UI runtime belum dibuktikan. Status PRD APPROVED mencatat keputusan user; `experience_baseline_status: DRAFT` mencatat evidence runtime yang belum tersedia, bukan penolakan approval tersebut.
+PRD ini menetapkan pengalaman user, requirement observable, acceptance criteria, kondisi gagal, dan release gates. BRD disetujui user pada 2026-10-04 dengan DEC-001/DEC-002. PRD disetujui melalui `$sc-ui Approved PRD`; arah baseline UI disetujui melalui `$sc-pan Approved Baseline UI`, ditafsirkan sebagai `/sc-plan`. Runnable mock CLI evidence kini verified untuk GOAL-001; subscription integration dan native UI runtime belum dibuktikan. Status PRD APPROVED mempertahankan keputusan user; `experience_baseline_status: DRAFT` mencatat product-owner walkthrough dan native usability evidence yang masih pending. Rekonsiliasi `/sc-prd` di bawah memperinci bagian OPEN-UI-001/002 yang sudah terbukti dan yang belum.
 
 ## Minimum Completeness Gate
 
@@ -22,10 +22,10 @@ Business approver: user pemohon; `$sc-ui Approved PRD`, 2026-10-04.
 Security/privacy/operational owners: fungsi pada BRD; pemegang peran organisasi ditetapkan sebelum real-data pilot.  
 ui_delivery_profile: HIGH_INTERACTION  
 experience_baseline_status: DRAFT  
-UI direction approval: APPROVED — user pemohon, `$sc-pan Approved Baseline UI`, 2026-10-04; evidence runtime belum tersedia.  
+UI direction approval: APPROVED — user pemohon, `$sc-pan Approved Baseline UI`, 2026-10-04; mock runtime evidence tersedia, product-owner walkthrough dan terminal usability proof masih pending.\
 topology: NETWORKED — tindakan user mengatur pengiriman inference dan penahanan tool.  
 experience reviewer: Codex, review read-only `/sc-ui` di bagian UI Experience Gate.  
-implementation_authorization: belum diberikan; tidak ada GOAL produksi pada tahap PRD.
+implementation_authorization: user `$sc-work` mengotorisasi FSD-PROMPTSHIELD-V1#GOAL-001 dan GOAL-002 pada 2026-10-04; GOAL-001 verified offline, GOAL-002 tetap gated oleh readiness FSD; GOAL-003..010 belum diotorisasi. PRD review ini tidak memberikan execution authorization baru.
 
 HIGH_INTERACTION dipilih karena pending approval asynchronous, streaming, perubahan mode saat request aktif, tool hold, cancel dan recovery offline. Ini memperinci klasifikasi UI pada BRD yang sebelumnya masih berupa proposal STANDARD; tidak mengubah scope bisnis.
 
@@ -335,7 +335,7 @@ AI eval mencakup ID/EN/mixed context, malformed output, foreign token, attributi
 
 ## UI Experience Gate
 
-Critical journeys: US-001 setup/login, US-003 Detect First, US-006/007 held tools dan US-008/009 mode/cancel/recovery. Requirement refs: FR-001/002/005/012/013/014/017; corresponding AC IDs. Baseline DRAFT; coverage di bawah adalah **coverage requirement**, bukan hasil runtime verification.
+Critical journeys: US-001 setup/login, US-003 Detect First, US-006/007 held tools dan US-008/009 mode/cancel/recovery. Requirement refs: FR-001/002/005/012/013/014/017; corresponding AC IDs. Baseline DRAFT; tabel berikut tetap **coverage requirement** untuk produk. Evidence mock seluruh UI-STATE-001..012 tercatat pada rekonsiliasi di bawah; label state bukan bukti timing atau native integration.
 
 | State ID / applicability | Required behavior dan evidence target |
 |---|---|
@@ -364,9 +364,26 @@ rtk python .agent/skills/interface-design/scripts/search.py "CLI terminal asynch
 
 Hasil: 4 guidance rows tentang focus, keyboard navigation, announced errors, submit feedback. Digunakan sebagai advisory principles untuk terminal, bukan bukti browser/CLI compatibility. State diagram dan UI matrix di PRD ini menjadi document review locators; sumber lokal retrieval adalah `.agent/skills/interface-design/data/ux-guidelines.csv`. Tidak mengimpor CSV penuh atau membentuk design system baru.
 
-Classification: **EVIDENCE** → owning `/sc-prd`. Finding: specification telah mencakup named states, tetapi runnable evidence untuk asynchronous hold/cancel, streaming-mode switch, keyboard/focus, offline/readiness, dan terminal overflow belum tersedia. `experience_baseline_status` tetap DRAFT. Tidak ada disposition `promote decision` atas prototype karena tidak ada prototype yang dijalankan. OPEN-UI-001/002 harus diselesaikan melalui `/sc-ui` evidence sebelum baseline dapat VALIDATED; approver tetap user pemohon.
+Historical review sebelum GOAL-001: classification **EVIDENCE** → owning `/sc-prd`. Specification mencakup named states, tetapi belum ada runnable prototype pada saat itu; baseline tetap DRAFT. Finding evidence-missing tersebut digantikan oleh rekonsiliasi berikut. Approval arah baseline pada revision 1.1 tetap berlaku.
 
-Approval arah baseline dicatat pada revision 1.1 setelah review read-only `/sc-ui`. Tidak ada evidence runtime baru, sehingga OPEN-UI-001/002 tetap terbuka untuk pembuktian. Tidak memakai NOT_APPLICABLE/EXCEPTION_APPROVED untuk melewati gate. Native Desktop state/runtime coverage memerlukan review fase 2 tersendiri; belum diverifikasi dari CLI UI evidence.
+### Rekonsiliasi baseline dan OPEN-UI-001/002 — 2026-10-04
+
+Reviewer: Codex, sequential in-thread. User meminta `$sc-ui .scratch/prototypes/promptshield-ui-v1/VERIFICATION.md`, kemudian `$sc-prd for baseline review and OPEN-UI-001/002`. Decision question: apakah runnable evidence mendukung approved CLI experience, dan bagian mana yang masih memerlukan human/native verification? Classification **EVIDENCE**; disposition **promote decision** hanya untuk already-approved local behavior. Request review ini tidak dicatat sebagai product-owner acceptance atas walkthrough.
+
+Evidence identity: [GOAL-001 verification](../../.scratch/prototypes/promptshield-ui-v1/VERIFICATION.md), SHA-256 `7880a35e86634ec7377e78a3a8cfe722257c02263e2835bfec89a040954a2f9b`; [scenario report](../../.scratch/prototypes/promptshield-ui-v1/evidence/scenario-report.json), SHA-256 `a4b4b94f22c7a9671053c6afacc00afb98a6bc9b220819aa6d4a71eb3396d6ad`. Report pins CONTRACT-001/fixture revision 1.0.0, seven source fingerprints, commands, environment dan original timestamp. Follow-up `/sc-ui` rerun pada 2026-10-04 12:50 UTC: FSD-PROMPTSHIELD-V1#TEST-001 exit 0, 15 tests; TEST-002 exit 0, 46 scenario runs pada 80/120 columns; all seven source fingerprints matched. Tidak ada stored evidence yang ditimpa pada rerun.
+
+| Approved behavior / impacted refs | Evidence reviewed | Remaining baseline or product verification |
+|---|---|---|
+| Explicit setup, no default approval, readiness reason; AC-002/003, UI-STATE-001/004/009 | [Setup 80](../../.scratch/prototypes/promptshield-ui-v1/evidence/setup-80.txt), offline scenario | Scripted readiness tidak mengukur actual warmup atau input responsiveness saat engine bekerja |
+| Pending mask/edit/cancel, stale rejection; AC-005/014/017, UI-STATE-007/010 | [Pending 80](../../.scratch/prototypes/promptshield-ui-v1/evidence/pending-80.txt), [stale 80](../../.scratch/prototypes/promptshield-ui-v1/evidence/stale-80.txt), edit/expiry/Ctrl+C/disconnect scenarios | Actual concurrent native stream, reviewer disconnect/deadline dan focus retention |
+| Held manual/variable/cancel mengakhiri call lama; AC-012/013/017, UI-STATE-005/010 | [Held PTY 80](../../.scratch/prototypes/promptshield-ui-v1/evidence/held-pty-80.txt), [variable 120](../../.scratch/prototypes/promptshield-ui-v1/evidence/held-120.txt) | Product-owner clarity review; native held-event barrier bukan bukti mock |
+| Active/next mode terpisah, exposure OFF/Detect Only terlihat; AC-006/007/014, UI-STATE-008/011 | Stale/unsafe/degraded scenarios; [OFF 120](../../.scratch/prototypes/promptshield-ui-v1/evidence/unsafe-120.txt) | Actual sent-stream snapshot dan mode switching di qualified native route |
+| Empty/success/forbidden/error distinctions; AC-003/010/015/017/019, UI-STATE-002/003/005/006/008 | Empty/success/forbidden/auth/upstream/stream-invalid scenarios | Actual auth/owner/provider outcomes dan accessibility announcement |
+| Numbered controls, invalid/blank selection retention, Cancel visibility, wrapped plain text; AC-002/005/012/014/015, UI-STATE-012 | [Keyboard 80](../../.scratch/prototypes/promptshield-ui-v1/evidence/keyboard-80.txt), TEST-002 at 80/120; existing 80-column PTY | Physical 120-column terminal, assistive technology, native stdin/focus isolation |
+
+Baseline review material: setup requires an explicit mode; pending request offers Mask/Edit/Cancel; held call offers Manual/Variable/Cancel and never resumes the old call; mode/status distinguishes active request from next request; errors retain safe choices and explain recovery. Approved FSD Section 8.1 specifies a separate reviewer terminal, numbered choices plus Enter, plain output and no consumption of native Codex stdin. This placement is the existing design authority, not a new frontend decision. Product-owner walkthrough should assess whether those labels, terminal outcomes and recovery steps are understandable using the linked transcripts or the [runnable prototype](../../.scratch/prototypes/promptshield-ui-v1/README.md).
+
+OPEN-UI-001/002 remain OPEN with partial evidence, as detailed below. Baseline closure requires product-owner usability observations and scoped physical-terminal/accessibility evidence reviewed through `/sc-ui`. Actual native auth, event gating, streaming/concurrency dan stdin/focus isolation remain FSD-PROMPTSHIELD-V1#TEST-003/011 product integration obligations; mock evidence does not discharge them, but this reconciliation does not add real-provider proof as a new prerequisite for accepting a throwaway experience baseline. Owning `/sc-plan` reconciles the baseline outcome with FSD-PROMPTSHIELD-V1#OPEN-007. Prior PRD, UI direction and FSD approvals persist; do not request their reapproval for unchanged semantics. If review identifies changed observable behavior, route that change to `/sc-prd`; implementation divergence returns to owning `/sc-work`. No NOT_APPLICABLE or EXCEPTION_APPROVED is introduced. Native Desktop coverage remains phase 2.
 
 ## Testing Decisions, UAT dan Release Gates
 
@@ -426,8 +443,8 @@ Stop criteria: original known value keluar pada protected route, held item execu
 | OPEN-PRODUCT-002 / OPEN | Supported initial OS/client/model/transport matrix dan target pilot scope; FR-001/003/022 | Product/platform; sebelum GATE-001/003. Observed Windows/0.160.0 belum support claim |
 | OPEN-PRODUCT-003 / OPEN | Named security/privacy owners dan locked organization mode policy; FR-014/019/024 | Product/platform/privacy; sebelum real-data pilot. Synthetic-only; tidak self-assign legal approval |
 | OPEN-PRODUCT-004 / RESOLVED | Control UI Bahasa Indonesia sesuai baseline yang diterima; native answer language dipertahankan; CLI Surface/AC-005/013 | User pemohon, `$sc-pan Approved Baseline UI`, 2026-10-04; tidak mengubah bahasa response model |
-| OPEN-UI-001 / OPEN | Runnable interactive evidence untuk pending/hold/cancel/streaming/mode/offline/keyboard; UI-STATE-001/007/008/009/010/012 | `/sc-ui`, product reviewer; sebelum GATE-002. Baseline DRAFT; prototype throwaway atau current-runtime evidence, no false VALIDATED |
-| OPEN-UI-002 / OPEN | Native CLI control placement dan terminal overflow/long label/readiness state proof; US-001/003/006/008 | `/sc-ui`, maintainer/product reviewer; sebelum GATE-002. Companion control UX tetap proposal sesuai BRD |
+| OPEN-UI-001 / OPEN (partial evidence) | Mock pending/hold/cancel/stale/mode/offline/keyboard evidence verified. Baseline missing: product-owner walkthrough outcome and assessment of mock timing limitations; UI-STATE-001/007/008/009/010/012, AC-003/005/012/013/014/017 | Product reviewer + maintainer; `/sc-ui` review sebelum GATE-002; FSD-PROMPTSHIELD-V1#OPEN-007. Use linked GOAL-001 evidence for local behavior. Actual native streaming/mode concurrency, disconnect/deadline dan readiness responsiveness remain FSD TEST-003/011 obligations after qualified prerequisites. Baseline DRAFT; no direct-provider fallback |
+| OPEN-UI-002 / OPEN (partial evidence) | Separate reviewer placement specified by approved FSD Section 8.1; 80/120 plain wrapping and 80-column PTY observed. Baseline missing: product-owner placement/usability observations, physical 120-column terminal and assistive-technology usability; US-001/003/006/008, UI-STATE-012 | Product reviewer + maintainer; `/sc-ui` sebelum GATE-002; FSD-PROMPTSHIELD-V1#OPEN-007. Existing placement approval persists; native stdin/focus isolation remains FSD TEST-011 proof. Retain plain text/Cancel controls; do not invent companion frontend or claim native usability proven |
 | OPEN-PRIVACY-001 / OPEN | Lawful basis/purpose, sharing/vendor/transfer/retention/DPIA applicability; FR-024/PRIV-004 | Privacy/legal owner; sebelum processing data nyata. Synthetic-only feasibility |
 
 Resolved decisions: BRD-PROMPTSHIELD-V1:OPEN-001→DEC-001 subscription; OPEN-002→DEC-002 text restoration/held manual-variable tools. Jangan membuka kembali pilihan API/tool restoration hanya karena factual integration evidence masih pending. Bila native integration memerlukan product scope change, kembalikan ke `/sc-explore` dengan evidence, bukan mengganti ke custom frontend secara diam-diam.
@@ -486,14 +503,16 @@ critical_acceptance_refs:
   - PRD-PROMPTSHIELD-V1:AC-013
 fsd_planning_authorized: true
 production_execution_authorized: false
-next_route: /sc-plan
+next_route: /sc-ui
 ```
 
-Next actions: `/sc-plan` menyusun FSD/goal pointers dan pekerjaan evidence yang terbatas. Targeted `/sc-research` mengisi subscription/session/protocol facts; `/sc-ui` meninjau runnable evidence setelah tersedia. Product owner menetapkan OPEN-PRODUCT items yang memengaruhi release acceptance. Approval PRD/UI telah diterima dan tidak diminta ulang; approval FSD serta execution authorization tetap checkpoint terpisah.
+Next actions: product owner meninjau runnable CLI/transcripts yang ditautkan untuk usability; maintainer melengkapi native/focus/physical-terminal evidence melalui `/sc-ui`. Targeted `/sc-research` mengisi subscription/session/protocol prerequisites. Existing FSD dan goal pointers tetap authoritative; owning `/sc-plan` merekonsiliasi evidence ini dengan FSD#OPEN-007 tanpa melepas GOAL-002 selama readiness BLOCKED. PRD/UI/FSD approvals dan existing goal authorizations tetap berlaku. Approval walkthrough saja tidak membuktikan runtime facts yang belum tersedia.
+
+GOAL-001 evidence update, 2026-10-04: FSD approved dan user `$sc-work` mengotorisasi bounded offline enabler. [Runnable local verification](../../.scratch/prototypes/promptshield-ui-v1/VERIFICATION.md) tersedia: 15 contract tests dan 46 synthetic terminal scenario runs, all UI-STATE-001..012, 80/120 columns. Read-only review classification EVIDENCE, disposition promote decision untuk already-approved local behavior; tidak ada perubahan observable product semantics. `experience_baseline_status` tetap DRAFT sampai user-product-owner/native placement review; OPEN-UI-001/002 belum ditutup. Owning `/sc-plan` pins local contract/fixture revisions dan mempertahankan production blockers. Prototype code tidak menjadi production seed.
 
 ## Verification dan References
 
-Verification dokumen: `rtk node .agent/tools/doc-lint.mjs docs/prd/prd-promptshield-v1.md --advisory --requires-hld` selesai exit 0 tanpa structural findings. Inspection mencatat 24 FR, 24 AC, 11 stories, 14 rules, 11 planned test scenarios dan 12 UI states; tidak ada duplicate/undefined references pada kelompok tersebut. Seluruh 16 BREQ/BA memiliki traceability row dan semua local Markdown links tersedia. Content review mempertahankan approved DEC-001/DEC-002, four-mode/failure behavior dan text-versus-tool boundary. Read-only UI review tercatat di atas; interactive evidence belum tersedia.
+Verification dokumen: `rtk node .agent/tools/doc-lint.mjs docs/prd/prd-promptshield-v1.md --advisory --requires-hld` selesai exit 0 tanpa structural findings pada rekonsiliasi ini; semua 16 local Markdown links tersedia. Inspection awal mencatat 24 FR, 24 AC, 11 stories, 14 rules, 11 planned test scenarios dan 12 UI states; tidak ada duplicate/undefined references pada kelompok tersebut. Seluruh 16 BREQ/BA memiliki traceability row. Content review mempertahankan approved DEC-001/DEC-002, four-mode/failure behavior dan text-versus-tool boundary. Runnable mock evidence dan batasnya tercatat di atas.
 
 Tidak ada implementation/runtime test, login operation, live inference, package/model install, Git mutation atau perubahan Codex user configuration dalam tahap ini. Lint/inspection dokumen tidak membuktikan subscription integration, leakage containment, detector accuracy atau UI runtime readiness.
 
